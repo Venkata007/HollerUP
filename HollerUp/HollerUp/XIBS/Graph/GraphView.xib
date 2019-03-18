@@ -94,7 +94,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="dgA-4Y-PNm">
                             <rect key="frame" x="5" y="0.0" width="49" height="38.5"/>
                             <string key="text">$4000
-(800 Min)</string>
+(800 Max)</string>
                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                             <color key="textColor" red="0.3294117647" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>

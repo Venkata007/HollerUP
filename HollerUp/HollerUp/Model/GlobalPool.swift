@@ -37,7 +37,7 @@ class GlobalPool: NSObject {
         ez.runThisInMainThread {
             view.isUserInteractionEnabled = false
             self.spinnerView.frame=CGRect(x: view.center.x-25, y: view.center.y, width: 35, height: 35)
-            self.spinnerView.lineWidth = 2.0;
+            self.spinnerView.lineWidth = 3.0;
             self.spinnerView.tintColor = .themeColor
             view.addSubview(self.spinnerView)
             self.spinnerView.startAnimating()

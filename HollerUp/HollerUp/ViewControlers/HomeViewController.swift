@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
     func updateUI(){
         self.detailsViewInView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.lightGray, radius: 2.0, opacity: 0.35 ,cornerRadius : 0)
         self.setAvailablitySwitch.onTintColor = .themeColor
-        self.setAvailablitySwitch.tintColor = .whiteColor
+        self.setAvailablitySwitch.tintColor = .redColor
         self.setAvailablitySwitch.thumbTintColor = .whiteColor
         self.setAvailablitySwitch.backgroundColor = .secondaryColor1
         self.setAvailablitySwitch.layer.cornerRadius = self.setAvailablitySwitch.bounds.height / 2
