@@ -147,7 +147,7 @@ extension GraphView : UICollectionViewDelegate, UICollectionViewDataSource, UICo
         return cell
     }
     internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = CGFloat(UIDevice.isPhone() ? 85.0 : 150.0)
+        let width = CGFloat(UIDevice.isPhone() ? 85.0 : collectionView.bounds.width/4)
         let height = self.collectionViewGraph.bounds.height
         let sizeOfCell = CGSize(width: width, height: height)
         print(sizeOfCell)

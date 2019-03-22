@@ -116,7 +116,9 @@
                         <constraint firstItem="BtU-eu-pNo" firstAttribute="leading" secondItem="SvI-K4-kdJ" secondAttribute="trailing" id="Fcf-MT-WZn"/>
                         <constraint firstAttribute="trailing" secondItem="BtU-eu-pNo" secondAttribute="trailing" id="Km6-ku-Dd0"/>
                         <constraint firstAttribute="trailing" secondItem="O9e-1d-1d2" secondAttribute="trailing" id="RAn-Uq-IHY"/>
-                        <constraint firstAttribute="width" constant="60" id="Tea-Sl-8rj"/>
+                        <constraint firstAttribute="width" constant="60" id="Tea-Sl-8rj">
+                            <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                        </constraint>
                         <constraint firstItem="O9e-1d-1d2" firstAttribute="centerY" secondItem="n7i-LV-1GS" secondAttribute="centerY" id="Vo4-vF-Hoa"/>
                         <constraint firstItem="hDj-11-lRj" firstAttribute="top" secondItem="n7i-LV-1GS" secondAttribute="top" id="W4T-QR-9Xg"/>
                         <constraint firstItem="BtU-eu-pNo" firstAttribute="leading" secondItem="gxO-yV-lMU" secondAttribute="trailing" constant="4" id="Y1s-Aq-q1w"/>

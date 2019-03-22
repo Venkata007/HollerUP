@@ -76,6 +76,7 @@ class CalenderView: UIView {
             self.leftMonthScroll.setImage(#imageLiteral(resourceName: "leftArrow"), for: .normal)
             self.rightMonthScroll = UIButton(frame: CGRect(x: self.bounds.width-height, y: 0, width: height, height: height))
             self.rightMonthScroll.addTarget(self, action: #selector(self.buttonActions(_:)), for: .touchUpInside)
+            print(self.rightMonthScroll)
             self.rightMonthScroll.setImage(#imageLiteral(resourceName: "rightArrow"), for: .normal)
             self.calenderViewInView.addSubview(self.leftMonthScroll)
             self.calenderViewInView.addSubview(self.rightMonthScroll)
