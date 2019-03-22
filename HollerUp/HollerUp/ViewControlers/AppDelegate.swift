@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,18 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UITabBar.appearance().tintColor = #colorLiteral(red: 0.04293424636, green: 0.7124077678, blue: 0.8466896415, alpha: 1)
-        UITabBar.appearance().unselectedItemTintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        UITabBar.appearance().barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        UITabBar.appearance().isTranslucent = false
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont.appFont(.Medium, size: 10)], for: .normal)
-        if let tabBarController = window?.rootViewController as? TabBarController {
-            DispatchQueue.main.async {
-                if let unselectedImage = UIImage(named: "HollerUp-Icon-Deactive"), let selectedImage = UIImage(named: "HollerUp-Icon-Active") {
-                    tabBarController.addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage)
-                }
-            }
-        }
+        IQKeyboardManager.shared.enable = true
+        self.pushingToRootViewController()
         return true
     }
 
@@ -41,4 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {}
 
 }
-
+extension AppDelegate{
+    func pushingToRootViewController(){
+        if let tabBarController = window?.rootViewController as? TabBarController {
+            DispatchQueue.main.async {
+                if let unselectedImage = UIImage(named: "HollerUp-Icon-Deactive"), let selectedImage = UIImage(named: "HollerUp-Icon-Active") {
+                    tabBarController.addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage)
+                }
+            }
+        }
+    }
+}

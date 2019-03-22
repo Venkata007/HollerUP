@@ -8,6 +8,6 @@
 
 import Foundation
 //MARK :- NOTIFICATIONS
-let NOTIFICATION_STATUS               = "Notification_Status"
+let NOTIFICATION_STATUS                       = "Notification_Status"
 let NOTIFICATION_APPDELEGATE          = "Notification_Appdelegate"
-let NOTIFICATION_SOCKETS              = "Notification_Sockets"
+let NOTIFICATION_SOCKETS                   = "Notification_Sockets"

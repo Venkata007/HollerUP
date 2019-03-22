@@ -189,8 +189,8 @@
 				A371A4E322326EB700F6D7C0 /* XIBS */,
 				A30B8525222FC4F1009A7A96 /* ViewControlers */,
 				A30B8517222FC422009A7A96 /* Main.storyboard */,
-				A30B851A222FC423009A7A96 /* Assets.xcassets */,
 				A30B851C222FC423009A7A96 /* LaunchScreen.storyboard */,
+				A30B851A222FC423009A7A96 /* Assets.xcassets */,
 				A30B851F222FC423009A7A96 /* Info.plist */,
 				A30B8551222FC55E009A7A96 /* HollerUp-Bridging-Header.h */,
 			);

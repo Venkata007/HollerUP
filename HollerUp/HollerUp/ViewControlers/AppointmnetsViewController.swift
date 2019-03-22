@@ -56,6 +56,6 @@ extension AppointmnetsViewController: UITableViewDataSource,UITableViewDelegate 
         return UITableViewAutomaticDimension
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return UIDevice.isPhone() ? 100 : 150
     }
 }

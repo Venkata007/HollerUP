@@ -28,6 +28,12 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Sync the my events to Calendar.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Used for Uplaoding Profile pic </string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Used for uploading profile from Mobile Albums</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>

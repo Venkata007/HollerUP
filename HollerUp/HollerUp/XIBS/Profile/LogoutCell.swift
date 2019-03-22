@@ -16,7 +16,7 @@ class LogoutCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.switch.onTintColor = .themeColor
-        self.switch.tintColor = .whiteColor
+        self.switch.tintColor = .redColor
         self.switch.thumbTintColor = .whiteColor
         self.switch.backgroundColor = .secondaryColor1
         self.switch.layer.cornerRadius = self.switch.bounds.height / 2

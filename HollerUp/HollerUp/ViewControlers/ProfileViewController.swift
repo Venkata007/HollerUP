@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var editBtn: UIButton!
     
     var titleArray = ["Mobile","Email ID","Bank Account Details","Address","Documents"]
-    var detailsArray = ["+91 9533565007","vamsi@gmail.com","ICICI Bank","Madinaguda"," 4 Documents"]
+    var detailsArray = ["+91 9533565007","vamsi@gmail.com","ICICI Bank","Madinaguda","4 Documents"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +54,7 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
             return cell
         }else if indexPath.section == 7{
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.LogoutCell) as! LogoutCell
+            cell.switch.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
             cell.selectionStyle = .none
             return cell
         }else{
@@ -68,11 +69,11 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0{
-            return 70
+           return UIDevice.isPhone() ? 70 : 90
         }else if indexPath.section == 1{
             return UITableViewAutomaticDimension
         }
-        return 50
+        return  UIDevice.isPhone() ? 50 : 80
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 1{
@@ -85,6 +86,19 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
+        TheGlobalPoolManager.cornerAndBorder(headerView, cornerRadius: 0, borderWidth: 0.5, borderColor: .lightGray)
         return headerView
+    }
+    //Logout Switch Method
+    @objc func switchChanged(_ sender : UISwitch!){
+        if sender.isOn{
+            print("ONNNnnnnnnnn")
+        }else{
+            TheGlobalPoolManager.showAlertWith(title: "Are you sure", message: "Do you want to Logout?", singleAction: false, okTitle:"Confirm") { (sucess) in
+                if sucess!{
+                    
+                }
+            }
+        }
     }
 }

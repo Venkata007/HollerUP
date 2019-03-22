@@ -149,7 +149,7 @@ extension UIColor{
 }
 //MARK:- UIFont
 extension UIFont{
-    static func appFont(_ font:AppFonts, size:CGFloat = 16.0) -> UIFont{
+    static func appFont(_ font:AppFonts, size:CGFloat = UIDevice.isPhone() ? 16.0 : 20.0) -> UIFont{
         return UIFont(name: font.fonts, size: size) ??  UIFont(name: AppFonts.Regular.fonts, size: size)!
     }
 }

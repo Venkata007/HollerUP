@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EZSwiftExtensions
 
 class CollectionViewCell: UICollectionViewCell {
 
@@ -20,6 +21,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var monthLbl: UILabel!
     @IBOutlet weak var durationGraphLbl: UILabel!
     @IBOutlet weak var earningsGraphLbl: UILabel!
+    @IBOutlet weak var viewInViewWidth: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +32,9 @@ class CollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         self.viewInView.cornerRadius = 8.0
         self.viewInView.backgroundColor = .white
-        self.quaterLabel.roundCorners(corners: [.topLeft,.topRight], radius: 8.0)
+        ez.runThisInMainThread {
+            self.quaterLabel.roundCorners(corners: [.topLeft,.topRight], radius: 8.0)
+        }
     }
     override func layoutIfNeeded() {
         super.layoutIfNeeded()

@@ -27,6 +27,7 @@ class GlobalPool: NSObject {
     let dispatch = Dispatcher()
     var view:UIView{return (ez.topMostVC?.view)!}
     var vc:UIViewController{return ez.topMostVC!}
+    var isAlertDisplaying = false
     override init() {
         super.init()
     }
@@ -39,6 +40,7 @@ class GlobalPool: NSObject {
             self.spinnerView.frame=CGRect(x: view.center.x-25, y: view.center.y, width: 35, height: 35)
             self.spinnerView.lineWidth = 3.0;
             self.spinnerView.tintColor = .themeColor
+            TheGlobalPoolManager.cornerAndBorder(self.spinnerView, cornerRadius: self.spinnerView.w / 2, borderWidth: 1, borderColor: .lightGray)
             view.addSubview(self.spinnerView)
             self.spinnerView.startAnimating()
         }
@@ -154,42 +156,6 @@ class GlobalPool: NSObject {
         maskLayer.path = path.cgPath
         object.layer.mask = maskLayer
     }
-    func showNoDataAvailableLbl(_ view : UIView , hiddenStatus : Bool){
-        let label = UILabel(frame: CGRect(x: view.centerX, y: view.centerY, width: view.frame.w, height: 21))
-        label.textAlignment = .center
-        label.text = ToastMessages.No_Data_Available
-        label.isHidden = hiddenStatus
-        view.addSubview(label)
-    }
-    //MARK:- Date of array
-    func arrayOfTimings(_ startTime:String, endTime:String) -> [String]{
-        var array: [String] = []
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        
-        let formatter2 = DateFormatter()
-        formatter2.dateFormat = "HH:mm"
-        
-        let startDate = startTime
-        let endDate = endTime
-        
-        let date1 = formatter.date(from: startDate)
-        let date2 = formatter.date(from: endDate)
-        
-        var i = 1
-        while true {
-            let date = date1?.addingTimeInterval(TimeInterval(i*30*60))
-            let string = formatter2.string(from: date!)
-            
-            if date! >= date2! {
-                break;
-            }
-            
-            i += 1
-            array.append(string)
-        }
-        return array
-    }
     func getTodayString() -> String{
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -197,7 +163,6 @@ class GlobalPool: NSObject {
         let date24 = dateFormatter.string(from: date)
         return date24
     }
-
     //MARK: - Email Validation
     func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -254,18 +219,6 @@ class GlobalPool: NSObject {
         }
         return nil
     }
-    // MARK: - Days Count
-    func getDaysCount(_ dateStr : String) -> (Int,Date){
-        let previousDate = dateStr
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
-        dateFormatter.timeZone = NSTimeZone.init(abbreviation: "UTC")! as TimeZone
-        let previousDateFormated : Date? = dateFormatter.date(from: previousDate)
-        let difference = currentDate.timeIntervalSince(previousDateFormated!)
-        return (Int(difference/(60 * 60 * 24 )),previousDateFormated!)
-    }
     //MARK:- Added Top Shadow
     func addTopShadow(_ view : UIView) {
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 4)
@@ -295,32 +248,26 @@ class GlobalPool: NSObject {
         attributedString1.append(attributedString2)
         return attributedString1
     }
-    func createTimesArray() -> [String]{
-        var timesArray = [String]()
-        let pastDate = Calendar.current.date(byAdding: .hour,value: Int(+5.30),to: Date())
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy hh:mm a"
-        
-        let formatter2 = DateFormatter()
-        formatter2.dateFormat = "hh:mm a"
-        
-        let startDate = NSDate()
-        let endDate = pastDate
-        
-        let date1 = startDate
-        let date2 = endDate
-        
-        var i = 1
-        while true {
-            let date = date1.addingTimeInterval(TimeInterval(i*30*60))
-            let string = formatter2.string(from: date as Date)
-            if date as Date >= date2! {
-                break;
-            }
-            i += 1
-            timesArray.append(string)
+    //MARK:- UIAlertController
+    func showAlertWith(title:String = "", message:String, singleAction:Bool,  okTitle:String = "Ok", cancelTitle:String = "Cancel", callback:@escaping AlertCallback) {
+        self.isAlertDisplaying = true
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction: UIAlertAction = UIAlertAction(title: okTitle, style: .default) { action -> Void in
+            self.isAlertDisplaying = false
+            callback(true)
         }
-        return timesArray
+        if !singleAction{
+            let cancelAction: UIAlertAction = UIAlertAction(title: cancelTitle, style: .default) { action -> Void in
+                //Just dismiss the action sheet
+                self.isAlertDisplaying = false
+                callback(false)
+            }
+            alertController.addAction(cancelAction)
+        }
+        alertController.addAction(okAction)
+        ez.runThisInMainThread {
+            self.vc.presentVC(alertController)
+        }
     }
 }
 class UILabelPadded: UILabel {

@@ -59,8 +59,8 @@ extension PaymentsViewController: UITableViewDataSource,UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0{
-            return 80
+            return  UIDevice.isPhone() ? 80 : 100
         }
-        return 100
+        return  UIDevice.isPhone() ? 100 : 120
     }
 }

@@ -8,18 +8,18 @@
 
 import Foundation
 import UIKit
-let SERVER_IP   = "http://13.233.109.143:1234"
-let LOCAL_IP    = "http://192.168.100.88:1234"
+let SERVER_IP       = "http://13.233.109.143:1234"
+let LOCAL_IP        = "http://192.168.100.88:1234"
 let SERVER_URL1 = "\(SERVER_IP)/api/v1"
 let SERVER_URL2 = "\(SERVER_IP)/"
 public struct Constants {
-    static let AppName                = "HollerUp"
+    static let AppName                                   = "HollerUp"
     static let TERMS_AND_SERVICES_URL = ""
-    static let StoryBoardName         = "Main"
+    static let StoryBoardName                      = "Main"
 }
 //MARK : - ViewController IDs
 public  struct ViewControllerIDs {
-    static let TabBarViewController                    = "TabBarViewController"
+    static let TabBarViewController                   = "TabBarViewController"
     static let AppointmnetsViewController      = "AppointmnetsViewController"
     static let PaymentsViewController               = "PaymentsViewController"
     static let HomeViewController                     = "HomeViewController"
@@ -29,12 +29,12 @@ public  struct ViewControllerIDs {
 //MARK : - Device INFO
 public struct DeviceInfo {
     static let DefaultDeviceToken = "2222222"
-    static let DeviceType         = "IOS"
-    static let Device             = "MOBILE"
+    static let DeviceType                = "IOS"
+    static let Device                         = "MOBILE"
 }
 //MARK : - All Apis
 public struct ApiURls{
-    static let add_current_address             = "\(SERVER_URL1)/address/add/customer/current"
+    static let add_current_address                          = "\(SERVER_URL1)/address/add/customer/current"
 }
 // MARK : - Toast Messages
 public struct ToastMessages {
@@ -82,9 +82,9 @@ public struct CollectionViewCellIdentifiers{
     static let AppointmentCell                               =  "AppointmentCell"
 }
 public struct ApiParams  {
-    static let Staus_Code   = "statusCode"
-    static let Message      = "message"
-    static let User_Details = "userDetails"
-    static let Code         = "code"
+    static let Staus_Code        = "statusCode"
+    static let Message             = "message"
+    static let User_Details      = "userDetails"
+    static let Code                   = "code"
 }
 
