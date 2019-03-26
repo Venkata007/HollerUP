@@ -121,92 +121,14 @@
                                 <attributes>
                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <font key="NSFont" size="16" name="Lato-Bold"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                        <tabStops>
-                                            <textTab alignment="left" location="28">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="56">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="84">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="112">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="140">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="168">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="196">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="224">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="252">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="280">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="308">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="336">
-                                                <options/>
-                                            </textTab>
-                                        </tabStops>
-                                    </paragraphStyle>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
                             <fragment content="10:00 - 6th March - 2019">
                                 <attributes>
                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <font key="NSFont" size="14" name="Lato-Regular"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                        <tabStops>
-                                            <textTab alignment="left" location="28">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="56">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="84">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="112">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="140">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="168">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="196">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="224">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="252">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="280">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="308">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="336">
-                                                <options/>
-                                            </textTab>
-                                        </tabStops>
-                                    </paragraphStyle>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
@@ -225,17 +147,12 @@
                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
-                        <fragment content="Speaking of which peter really wants you to come in on Friday to chat">
+                        <fragment>
+                            <string key="content">A paragraph is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose</string>
                             <attributes>
+                                <color key="NSBackgroundColor" red="1" green="0.99997000000000003" blue="0.99999000000000005" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <color key="NSColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <font key="NSFont" size="14" name="Lato-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="Speaking of which peter really wants you to come in on Friday to chat">
-                            <attributes>
-                                <color key="NSColor" red="0.54117999999999999" green="0.54117999999999999" blue="0.54117999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <font key="NSFont" size="14" name="Lato-Regular"/>
+                                <font key="NSFont" size="14" name="AvenirNext-Regular"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
@@ -303,6 +220,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.59999999999999" y="153.82308845577214"/>
         </view>
     </objects>
     <resources>

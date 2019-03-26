@@ -66,16 +66,6 @@ class AppointmnetsViewController: UIViewController,SCPopDatePickerDelegate  {
             break
         }
     }
-    @IBAction func fromDatePickerBtn(_ sender: UIButton) {
-        self.view.endEditing(true)
-        selectedBtn = "Start"
-        self.datePickerView()
-    }
-    @IBAction func toDatePickerBtn(_ sender: UIButton) {
-        self.view.endEditing(true)
-        selectedBtn = "End"
-        self.datePickerView()
-    }
 }
 extension AppointmnetsViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -151,6 +141,16 @@ extension AppointmnetsViewController{
     }
 }
 extension AppointmnetsViewController{
+    @IBAction func fromDatePickerBtn(_ sender: UIButton) {
+        self.view.endEditing(true)
+        selectedBtn = "Start"
+        self.datePickerView()
+    }
+    @IBAction func toDatePickerBtn(_ sender: UIButton) {
+        self.view.endEditing(true)
+        selectedBtn = "End"
+        self.datePickerView()
+    }
     func datePickerView(){
         self.datePicker.tapToDismiss = true
         self.datePicker.datePickerType = SCDatePickerType.date
