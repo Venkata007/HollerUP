@@ -316,11 +316,26 @@ class ButtonWithShadow: UIButton {
         updateLayerProperties()
     }
     func updateLayerProperties() {
-        self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75).cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 3)
-        self.layer.shadowOpacity = 1.0
+        self.layer.shadowOpacity = 2.0
         self.layer.shadowRadius = 3.0
         self.layer.cornerRadius = 8.0
         self.layer.masksToBounds = true
+    }
+}
+//MARK:- UI Button Icon Right
+class ButtonIconRight: UIButton {
+    override func imageRect(forContentRect contentRect:CGRect) -> CGRect {
+        var imageFrame = super.imageRect(forContentRect: contentRect)
+        imageFrame.origin.x = super.titleRect(forContentRect: contentRect).maxX - imageFrame.width
+        return imageFrame
+    }
+    override func titleRect(forContentRect contentRect:CGRect) -> CGRect {
+        var titleFrame = super.titleRect(forContentRect: contentRect)
+        if (self.currentImage != nil) {
+            titleFrame.origin.x  = super.imageRect(forContentRect: contentRect).minX
+        }
+        return titleFrame
     }
 }

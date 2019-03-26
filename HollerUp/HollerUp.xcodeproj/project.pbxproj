@@ -51,6 +51,13 @@
 		A3844CED223A7D3A00870D92 /* GraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3844CE9223A7D3A00870D92 /* GraphView.xib */; };
 		A3844CF2223B91E600870D92 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3844CF0223B91E600870D92 /* CalenderView.swift */; };
 		A3844CF3223B91E600870D92 /* CalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3844CF1223B91E600870D92 /* CalenderView.xib */; };
+		A3852539224516C40063CD88 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3852538224516C40063CD88 /* ChangePasswordVC.swift */; };
+		A385253C2248E0A10063CD88 /* NewAppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385253A2248E0A10063CD88 /* NewAppointmentCell.swift */; };
+		A385253D2248E0A10063CD88 /* NewAppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A385253B2248E0A10063CD88 /* NewAppointmentCell.xib */; };
+		A38525402248E7910063CD88 /* CompletedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385253E2248E7910063CD88 /* CompletedCell.swift */; };
+		A38525412248E7910063CD88 /* CompletedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A385253F2248E7910063CD88 /* CompletedCell.xib */; };
+		A38525442248EF380063CD88 /* RejectPopUpOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38525422248EF380063CD88 /* RejectPopUpOptions.swift */; };
+		A38525452248EF380063CD88 /* RejectPopUpOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38525432248EF380063CD88 /* RejectPopUpOptions.xib */; };
 		A397AC642237BC8700FE1F1C /* PaymentHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A397AC622237BC8700FE1F1C /* PaymentHeaderCell.swift */; };
 		A397AC652237BC8700FE1F1C /* PaymentHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A397AC632237BC8700FE1F1C /* PaymentHeaderCell.xib */; };
 		A397AC682237BCAC00FE1F1C /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A397AC662237BCAC00FE1F1C /* PaymentCell.swift */; };
@@ -63,6 +70,14 @@
 		A397AC792237CC8900FE1F1C /* ProfileDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A397AC772237CC8900FE1F1C /* ProfileDetailsCell.xib */; };
 		A397AC7C2237DD8600FE1F1C /* LogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A397AC7A2237DD8600FE1F1C /* LogoutCell.swift */; };
 		A397AC7D2237DD8600FE1F1C /* LogoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A397AC7B2237DD8600FE1F1C /* LogoutCell.xib */; };
+		A3A2B5AD2245056300C7E8CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A2B5AC2245056300C7E8CB /* LoginViewController.swift */; };
+		A3A2B5AF22450B6000C7E8CB /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A2B5AE22450B6000C7E8CB /* ForgotPasswordVC.swift */; };
+		A3A2B5B12245103700C7E8CB /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A2B5B02245103700C7E8CB /* ResetPasswordVC.swift */; };
+		A3F0C92B224902B800149539 /* UpcomingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F0C929224902B800149539 /* UpcomingDetailsView.swift */; };
+		A3F0C92C224902B800149539 /* UpcomingDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F0C92A224902B800149539 /* UpcomingDetailsView.xib */; };
+		A3F0C92F2249DDEA00149539 /* RejectOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F0C92D2249DDEA00149539 /* RejectOptionsCell.swift */; };
+		A3F0C9302249DDEA00149539 /* RejectOptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F0C92E2249DDEA00149539 /* RejectOptionsCell.xib */; };
+		A3F0C9322249EE6D00149539 /* SCPopDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F0C9312249EE6D00149539 /* SCPopDatePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +132,13 @@
 		A3844CE9223A7D3A00870D92 /* GraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphView.xib; sourceTree = "<group>"; };
 		A3844CF0223B91E600870D92 /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		A3844CF1223B91E600870D92 /* CalenderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalenderView.xib; sourceTree = "<group>"; };
+		A3852538224516C40063CD88 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		A385253A2248E0A10063CD88 /* NewAppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAppointmentCell.swift; sourceTree = "<group>"; };
+		A385253B2248E0A10063CD88 /* NewAppointmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAppointmentCell.xib; sourceTree = "<group>"; };
+		A385253E2248E7910063CD88 /* CompletedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedCell.swift; sourceTree = "<group>"; };
+		A385253F2248E7910063CD88 /* CompletedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletedCell.xib; sourceTree = "<group>"; };
+		A38525422248EF380063CD88 /* RejectPopUpOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectPopUpOptions.swift; sourceTree = "<group>"; };
+		A38525432248EF380063CD88 /* RejectPopUpOptions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RejectPopUpOptions.xib; sourceTree = "<group>"; };
 		A397AC622237BC8700FE1F1C /* PaymentHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHeaderCell.swift; sourceTree = "<group>"; };
 		A397AC632237BC8700FE1F1C /* PaymentHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHeaderCell.xib; sourceTree = "<group>"; };
 		A397AC662237BCAC00FE1F1C /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
@@ -129,6 +151,14 @@
 		A397AC772237CC8900FE1F1C /* ProfileDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileDetailsCell.xib; sourceTree = "<group>"; };
 		A397AC7A2237DD8600FE1F1C /* LogoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutCell.swift; sourceTree = "<group>"; };
 		A397AC7B2237DD8600FE1F1C /* LogoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutCell.xib; sourceTree = "<group>"; };
+		A3A2B5AC2245056300C7E8CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A3A2B5AE22450B6000C7E8CB /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		A3A2B5B02245103700C7E8CB /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		A3F0C929224902B800149539 /* UpcomingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDetailsView.swift; sourceTree = "<group>"; };
+		A3F0C92A224902B800149539 /* UpcomingDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingDetailsView.xib; sourceTree = "<group>"; };
+		A3F0C92D2249DDEA00149539 /* RejectOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectOptionsCell.swift; sourceTree = "<group>"; };
+		A3F0C92E2249DDEA00149539 /* RejectOptionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RejectOptionsCell.xib; sourceTree = "<group>"; };
+		A3F0C9312249EE6D00149539 /* SCPopDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCPopDatePicker.swift; sourceTree = "<group>"; };
 		C601918E29C17A2BC0C23ADB /* Pods-HollerUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HollerUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HollerUp/Pods-HollerUp.release.xcconfig"; sourceTree = "<group>"; };
 		D6498C7E7A5A996EE1306517 /* Pods_HollerUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HollerUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -202,6 +232,10 @@
 			children = (
 				A30B8527222FC4F1009A7A96 /* AppDelegate.swift */,
 				A30B8526222FC4F1009A7A96 /* ViewController.swift */,
+				A3A2B5AC2245056300C7E8CB /* LoginViewController.swift */,
+				A3A2B5AE22450B6000C7E8CB /* ForgotPasswordVC.swift */,
+				A3A2B5B02245103700C7E8CB /* ResetPasswordVC.swift */,
+				A3852538224516C40063CD88 /* ChangePasswordVC.swift */,
 				A371A4D9223255D300F6D7C0 /* AppointmnetsViewController.swift */,
 				A371A4DB223256A600F6D7C0 /* PaymentsViewController.swift */,
 				A371A4DD223256F400F6D7C0 /* HomeViewController.swift */,
@@ -223,6 +257,7 @@
 				A30B852F222FC4F1009A7A96 /* ConstanstsUsed.swift */,
 				A30B8530222FC4F1009A7A96 /* WebViewViewController.swift */,
 				A371A4C422314C5E00F6D7C0 /* TabBarController.swift */,
+				A3F0C9312249EE6D00149539 /* SCPopDatePicker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,8 +319,18 @@
 		A371A4E422326EDF00F6D7C0 /* Appointment Cell */ = {
 			isa = PBXGroup;
 			children = (
+				A385253A2248E0A10063CD88 /* NewAppointmentCell.swift */,
+				A385253B2248E0A10063CD88 /* NewAppointmentCell.xib */,
 				A371A4E522326F2C00F6D7C0 /* AppointmentCell.swift */,
 				A371A4E622326F2C00F6D7C0 /* AppointmentCell.xib */,
+				A385253E2248E7910063CD88 /* CompletedCell.swift */,
+				A385253F2248E7910063CD88 /* CompletedCell.xib */,
+				A38525422248EF380063CD88 /* RejectPopUpOptions.swift */,
+				A38525432248EF380063CD88 /* RejectPopUpOptions.xib */,
+				A3F0C92D2249DDEA00149539 /* RejectOptionsCell.swift */,
+				A3F0C92E2249DDEA00149539 /* RejectOptionsCell.xib */,
+				A3F0C929224902B800149539 /* UpcomingDetailsView.swift */,
+				A3F0C92A224902B800149539 /* UpcomingDetailsView.xib */,
 			);
 			path = "Appointment Cell";
 			sourceTree = "<group>";
@@ -421,13 +466,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A371A4FA22378F6300F6D7C0 /* Lato-MediumItalic.ttf in Resources */,
+				A3F0C92C224902B800149539 /* UpcomingDetailsView.xib in Resources */,
 				A397AC652237BC8700FE1F1C /* PaymentHeaderCell.xib in Resources */,
 				A397AC792237CC8900FE1F1C /* ProfileDetailsCell.xib in Resources */,
+				A3F0C9302249DDEA00149539 /* RejectOptionsCell.xib in Resources */,
 				A371A4FC22378F6300F6D7C0 /* Lato-Medium.ttf in Resources */,
 				A371A4F422378F6300F6D7C0 /* Lato-Italic.ttf in Resources */,
+				A38525452248EF380063CD88 /* RejectPopUpOptions.xib in Resources */,
 				A371A4F522378F6300F6D7C0 /* Lato-Bold.ttf in Resources */,
 				A397AC7D2237DD8600FE1F1C /* LogoutCell.xib in Resources */,
 				A371A4FB22378F6300F6D7C0 /* Lato-BoldItalic.ttf in Resources */,
+				A385253D2248E0A10063CD88 /* NewAppointmentCell.xib in Resources */,
 				A30B851E222FC423009A7A96 /* LaunchScreen.storyboard in Resources */,
 				A371A4F722378F6300F6D7C0 /* Lato-Regular.ttf in Resources */,
 				A3844CED223A7D3A00870D92 /* GraphView.xib in Resources */,
@@ -442,6 +491,7 @@
 				A397AC6F2237CBFE00FE1F1C /* NameCell.xib in Resources */,
 				A3844CF3223B91E600870D92 /* CalenderView.xib in Resources */,
 				A371A4F622378F6300F6D7C0 /* Lato-SemiboldItalic.ttf in Resources */,
+				A38525412248E7910063CD88 /* CompletedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,36 +553,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F0C9322249EE6D00149539 /* SCPopDatePicker.swift in Sources */,
 				A30B8549222FC4F2009A7A96 /* WebViewViewController.swift in Sources */,
 				A30B8545222FC4F2009A7A96 /* ExtensionClass.swift in Sources */,
+				A38525402248E7910063CD88 /* CompletedCell.swift in Sources */,
 				A30B8542222FC4F2009A7A96 /* GlobalPool.swift in Sources */,
 				A371A4C522314C5F00F6D7C0 /* TabBarController.swift in Sources */,
 				A30B854A222FC4F2009A7A96 /* Reachability.m in Sources */,
 				A371A4DE223256F400F6D7C0 /* HomeViewController.swift in Sources */,
 				A3844CEA223A7D3A00870D92 /* GraphView.swift in Sources */,
+				A38525442248EF380063CD88 /* RejectPopUpOptions.swift in Sources */,
 				A397AC682237BCAC00FE1F1C /* PaymentCell.swift in Sources */,
 				A30B8541222FC4F2009A7A96 /* AppDelegate.swift in Sources */,
 				A371A4E722326F2C00F6D7C0 /* AppointmentCell.swift in Sources */,
 				A397AC782237CC8900FE1F1C /* ProfileDetailsCell.swift in Sources */,
 				A30B854F222FC4F2009A7A96 /* UIViewController+MJPopupViewController.m in Sources */,
+				A3F0C92B224902B800149539 /* UpcomingDetailsView.swift in Sources */,
 				A30B8540222FC4F2009A7A96 /* ViewController.swift in Sources */,
 				A30B8547222FC4F2009A7A96 /* ShadowView.swift in Sources */,
 				A397AC7C2237DD8600FE1F1C /* LogoutCell.swift in Sources */,
 				A30B854C222FC4F2009A7A96 /* ToastView.swift in Sources */,
 				A30B8546222FC4F2009A7A96 /* String.swift in Sources */,
 				A3844CF2223B91E600870D92 /* CalenderView.swift in Sources */,
+				A3F0C92F2249DDEA00149539 /* RejectOptionsCell.swift in Sources */,
 				A397AC722237CC1400FE1F1C /* DetailsCell.swift in Sources */,
 				A30B8543222FC4F2009A7A96 /* Constants.swift in Sources */,
 				A371A4DA223255D300F6D7C0 /* AppointmnetsViewController.swift in Sources */,
 				A371A4E02232571B00F6D7C0 /* CalendarViewController.swift in Sources */,
+				A385253C2248E0A10063CD88 /* NewAppointmentCell.swift in Sources */,
+				A3852539224516C40063CD88 /* ChangePasswordVC.swift in Sources */,
 				A371A4E22232572C00F6D7C0 /* ProfileViewController.swift in Sources */,
+				A3A2B5B12245103700C7E8CB /* ResetPasswordVC.swift in Sources */,
 				A397AC6E2237CBFE00FE1F1C /* NameCell.swift in Sources */,
 				A30B8550222FC4F2009A7A96 /* MJPopupBackgroundView.m in Sources */,
 				A30B8544222FC4F2009A7A96 /* APIServices.swift in Sources */,
 				A371A4DC223256A600F6D7C0 /* PaymentsViewController.swift in Sources */,
 				A3844CEB223A7D3A00870D92 /* CollectionViewCell.swift in Sources */,
 				A30B8548222FC4F2009A7A96 /* ConstanstsUsed.swift in Sources */,
+				A3A2B5AF22450B6000C7E8CB /* ForgotPasswordVC.swift in Sources */,
 				A397AC642237BC8700FE1F1C /* PaymentHeaderCell.swift in Sources */,
+				A3A2B5AD2245056300C7E8CB /* LoginViewController.swift in Sources */,
 				A30B854B222FC4F2009A7A96 /* ToastWindow.swift in Sources */,
 				A30B854E222FC4F2009A7A96 /* ToastCenter.swift in Sources */,
 				A30B854D222FC4F2009A7A96 /* Toast.swift in Sources */,

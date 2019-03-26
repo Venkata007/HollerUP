@@ -24,7 +24,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Empty" translatesAutoresizingMaskIntoConstraints="NO" id="2PM-ad-fwZ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logout" translatesAutoresizingMaskIntoConstraints="NO" id="2PM-ad-fwZ">
                         <rect key="frame" x="15" y="10" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="75p-Gw-uJb">
@@ -70,6 +70,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Empty" width="160" height="160"/>
+        <image name="Logout" width="29" height="29"/>
     </resources>
 </document>

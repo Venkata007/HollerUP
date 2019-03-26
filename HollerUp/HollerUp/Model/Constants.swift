@@ -25,6 +25,10 @@ public  struct ViewControllerIDs {
     static let HomeViewController                     = "HomeViewController"
     static let CalendarViewController                = "CalendarViewController"
     static let ProfileViewController                     = "ProfileViewController"
+    static let LoginViewController                      = "LoginViewController"
+    static let ForgotPasswordVC                         = "ForgotPasswordVC"
+    static let ResetPasswordVC                           = "ResetPasswordVC"
+    static let ChangePasswordVC                      = "ChangePasswordVC"
 }
 //MARK : - Device INFO
 public struct DeviceInfo {
@@ -48,8 +52,11 @@ public struct ToastMessages {
     static let Invalid_FirstName           = "Invalid Username"
     static let Invalid_Number              = "Invalid Mobile Number"
     static let Invalid_Password            = "Password must contains min 6 character"
+    static let Invalid_Current_Password = "Invalid Current Password"
+    static let Invalid_New_Password = "Invalid New Password"
+    static let Invalid_Confirm_Password = "Invalid Confirm Password"
     static let Please_Wait                 = "Please wait..."
-    static let Password_Missmatch          = "Password Missmatch...😟"
+    static let Password_Missmatch          = "Oops! Password miss match... 🤪"
     static let Logout                      = "Logout Successfully...🤚"
     static let Invalid_Latitude            = "Invalid latitude"
     static let Invalid_Longitude           = "Invalid longitude"
@@ -76,6 +83,9 @@ public struct TableViewCellIdentifiers{
     static let DetailsCell                                            = "DetailsCell"
     static let ProfileDetailsCell                                 = "ProfileDetailsCell"
     static let LogoutCell                                            =  "LogoutCell"
+    static let NewAppointmentCell                        = "NewAppointmentCell"
+    static let CompletedCell                                    = "CompletedCell"
+    static let RejectOptionsCell                               = "RejectOptionsCell"
 }
 //MARK:- XIB Names
 public struct CollectionViewCellIdentifiers{

@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     
     var titleArray = ["Mobile","Email ID","Bank Account Details","Address","Documents"]
     var detailsArray = ["+91 9533565007","vamsi@gmail.com","ICICI Bank","Madinaguda","4 Documents"]
+    var imagesArray = [#imageLiteral(resourceName: "Mobile"),#imageLiteral(resourceName: "Mail_id"),#imageLiteral(resourceName: "Payments"),#imageLiteral(resourceName: "Location"),#imageLiteral(resourceName: "Documents")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,7 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
             cell.selectionStyle = .none
             cell.titleLbl.text = titleArray[indexPath.section - 2]
             cell.contentLbl.text = detailsArray[indexPath.section - 2]
+            cell.imgView.image = imagesArray[indexPath.section - 2]
             return cell
         }
     }
