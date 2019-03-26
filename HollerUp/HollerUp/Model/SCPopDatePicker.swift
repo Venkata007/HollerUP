@@ -1,5 +1,5 @@
 import UIKit
-
+import EZSwiftExtensions
 protocol SCPopDatePickerDelegate: NSObjectProtocol {
     func scPopDatePickerDidSelectDate(_ date: Date)
 }
@@ -89,7 +89,8 @@ open class SCPopDatePicker: UIView, UIGestureRecognizerDelegate {
             self.containerView.alpha = 1
         }, completion: { (success:Bool) in
             UIView.animate(withDuration: 0.30, delay: 0, options: .transitionCrossDissolve, animations: {
-                self.backgroundView.frame.origin.y = self.containerView.bounds.height / 2 - 125
+                //self.backgroundView.frame.origin.y = self.containerView.bounds.height / 2 - 125
+                self.backgroundView.frame.origin.y = self.containerView.bounds.height - 160
                 }, completion: { (success:Bool) in
                     
             })
@@ -128,11 +129,11 @@ open class SCPopDatePicker: UIView, UIGestureRecognizerDelegate {
     //Show Blur Effect
     fileprivate func _showBlur() {
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.contentView.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
-        self.containerView.addSubview(blurEffectView)
+        //self.containerView.addSubview(blurEffectView)
         
     }
     
@@ -151,7 +152,8 @@ open class SCPopDatePicker: UIView, UIGestureRecognizerDelegate {
     //
     //Create Background Container View
     fileprivate func createBackgroundView() -> UIView {
-        let bgView = UIView(frame: CGRect(x: self.containerView.frame.width / 2 - 150, y: self.containerView.bounds.maxY + 100, width: 300, height: 160))
+        //x = self.containerView.frame.width / 2 - 150
+        let bgView = UIView(frame: CGRect(x: 0, y: self.containerView.bounds.maxY + 100, width: ez.screenWidth, height: 160))
         bgView.autoresizingMask = [.flexibleWidth]
         bgView.backgroundColor = UIColor.clear
         
@@ -169,7 +171,8 @@ open class SCPopDatePicker: UIView, UIGestureRecognizerDelegate {
     fileprivate func addSelectButton() -> UIButton {
         
         let btn = UIButton(type: .system)
-        btn.frame = CGRect(x: self.backgroundView.frame.width / 2 - 150, y: self.datePickerView.frame.maxY, width: self.backgroundView.frame.size.width, height: 48)
+        //x = self.backgroundView.frame.width / 2 - 150
+        btn.frame = CGRect(x: 0, y: self.datePickerView.frame.maxY, width: self.backgroundView.frame.size.width, height: 48)
         btn.setTitle("Select", for: UIControlState())
         btn.titleLabel?.font = UIFont.appFont(.Medium)
         btn.tintColor = self.btnFontColour
