@@ -58,6 +58,8 @@
 		A38525412248E7910063CD88 /* CompletedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A385253F2248E7910063CD88 /* CompletedCell.xib */; };
 		A38525442248EF380063CD88 /* RejectPopUpOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38525422248EF380063CD88 /* RejectPopUpOptions.swift */; };
 		A38525452248EF380063CD88 /* RejectPopUpOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38525432248EF380063CD88 /* RejectPopUpOptions.xib */; };
+		A3973AA6224B434300F81765 /* UpcomingCallsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973AA4224B434300F81765 /* UpcomingCallsCell.swift */; };
+		A3973AA7224B434300F81765 /* UpcomingCallsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3973AA5224B434300F81765 /* UpcomingCallsCell.xib */; };
 		A397AC642237BC8700FE1F1C /* PaymentHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A397AC622237BC8700FE1F1C /* PaymentHeaderCell.swift */; };
 		A397AC652237BC8700FE1F1C /* PaymentHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A397AC632237BC8700FE1F1C /* PaymentHeaderCell.xib */; };
 		A397AC682237BCAC00FE1F1C /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A397AC662237BCAC00FE1F1C /* PaymentCell.swift */; };
@@ -139,6 +141,8 @@
 		A385253F2248E7910063CD88 /* CompletedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletedCell.xib; sourceTree = "<group>"; };
 		A38525422248EF380063CD88 /* RejectPopUpOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectPopUpOptions.swift; sourceTree = "<group>"; };
 		A38525432248EF380063CD88 /* RejectPopUpOptions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RejectPopUpOptions.xib; sourceTree = "<group>"; };
+		A3973AA4224B434300F81765 /* UpcomingCallsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCallsCell.swift; sourceTree = "<group>"; };
+		A3973AA5224B434300F81765 /* UpcomingCallsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingCallsCell.xib; sourceTree = "<group>"; };
 		A397AC622237BC8700FE1F1C /* PaymentHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHeaderCell.swift; sourceTree = "<group>"; };
 		A397AC632237BC8700FE1F1C /* PaymentHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHeaderCell.xib; sourceTree = "<group>"; };
 		A397AC662237BCAC00FE1F1C /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				A371A4E422326EDF00F6D7C0 /* Appointment Cell */,
 				A397AC612237BC4F00FE1F1C /* Payments */,
 				A397AC6A2237CBC800FE1F1C /* Profile */,
+				A3973AA3224B431700F81765 /* Upcoming Calls */,
 			);
 			path = XIBS;
 			sourceTree = "<group>";
@@ -377,6 +382,15 @@
 				A3844CF1223B91E600870D92 /* CalenderView.xib */,
 			);
 			path = CalenderView;
+			sourceTree = "<group>";
+		};
+		A3973AA3224B431700F81765 /* Upcoming Calls */ = {
+			isa = PBXGroup;
+			children = (
+				A3973AA4224B434300F81765 /* UpcomingCallsCell.swift */,
+				A3973AA5224B434300F81765 /* UpcomingCallsCell.xib */,
+			);
+			path = "Upcoming Calls";
 			sourceTree = "<group>";
 		};
 		A397AC612237BC4F00FE1F1C /* Payments */ = {
@@ -488,6 +502,7 @@
 				A30B8519222FC422009A7A96 /* Main.storyboard in Resources */,
 				A397AC732237CC1400FE1F1C /* DetailsCell.xib in Resources */,
 				A371A4E822326F2C00F6D7C0 /* AppointmentCell.xib in Resources */,
+				A3973AA7224B434300F81765 /* UpcomingCallsCell.xib in Resources */,
 				A397AC6F2237CBFE00FE1F1C /* NameCell.xib in Resources */,
 				A3844CF3223B91E600870D92 /* CalenderView.xib in Resources */,
 				A371A4F622378F6300F6D7C0 /* Lato-SemiboldItalic.ttf in Resources */,
@@ -592,6 +607,7 @@
 				A30B8548222FC4F2009A7A96 /* ConstanstsUsed.swift in Sources */,
 				A3A2B5AF22450B6000C7E8CB /* ForgotPasswordVC.swift in Sources */,
 				A397AC642237BC8700FE1F1C /* PaymentHeaderCell.swift in Sources */,
+				A3973AA6224B434300F81765 /* UpcomingCallsCell.swift in Sources */,
 				A3A2B5AD2245056300C7E8CB /* LoginViewController.swift in Sources */,
 				A30B854B222FC4F2009A7A96 /* ToastWindow.swift in Sources */,
 				A30B854E222FC4F2009A7A96 /* ToastCenter.swift in Sources */,

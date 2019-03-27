@@ -128,13 +128,11 @@ open class SCPopDatePicker: UIView, UIGestureRecognizerDelegate {
     
     //Show Blur Effect
     fileprivate func _showBlur() {
-        
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.contentView.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
         //self.containerView.addSubview(blurEffectView)
-        
     }
     
     //Create DatePicker
@@ -156,15 +154,7 @@ open class SCPopDatePicker: UIView, UIGestureRecognizerDelegate {
         let bgView = UIView(frame: CGRect(x: 0, y: self.containerView.bounds.maxY + 100, width: ez.screenWidth, height: 160))
         bgView.autoresizingMask = [.flexibleWidth]
         bgView.backgroundColor = UIColor.clear
-        
-        if showShadow {
-            bgView.layer.shadowOffset = CGSize(width: 3, height: 3)
-            bgView.layer.shadowOpacity = 0.7
-            bgView.layer.shadowRadius = 2
-        }
-        if showCornerRadius {
-            bgView.layer.cornerRadius = 10.0
-        }
+        bgView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 3.0, opacity: 0.5 ,cornerRadius : 0)
         return bgView
     }
     

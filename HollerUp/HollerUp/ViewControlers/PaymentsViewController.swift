@@ -36,9 +36,11 @@ class PaymentsViewController: UIViewController,SCPopDatePickerDelegate{
         self.tableView.dataSource = self
         self.updateUI()
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
     //MARK:- Update UI
     func updateUI(){
-        self.viewStatementViewInViewHeight.constant = 0
         self.viewStatementViewInView.isHidden = true
         TheGlobalPoolManager.cornerAndBorder(fromDatePickerBtn, cornerRadius: 8, borderWidth: 1, borderColor: .lightGray)
         TheGlobalPoolManager.cornerAndBorder(toDatePickerPtn, cornerRadius: 8, borderWidth: 1, borderColor: .lightGray)
@@ -50,7 +52,7 @@ class PaymentsViewController: UIViewController,SCPopDatePickerDelegate{
         self.segmentControl.setTitleTextAttributes([NSAttributedStringKey.font: UIFont.appFont(.Bold)],for: .normal)
     }
     //MARK:- IB Action Outlets
-    @IBAction func segmentControl(_ sender: Any) {
+    @IBAction func segmentControl(_ sender: UISegmentedControl) {
         switch segmentControl.selectedSegmentIndex {
         case 0:
             ez.runThisInMainThread {
@@ -59,7 +61,7 @@ class PaymentsViewController: UIViewController,SCPopDatePickerDelegate{
             }
             self.tableView.reloadData()
         case 1:
-            self.viewStatementViewInViewHeight.constant = 95
+            self.viewStatementViewInViewHeight.constant =  UIDevice.isPhone() ? 95 :120
             self.viewStatementViewInView.isHidden = false
             self.tableView.reloadData()
         default:

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EZSwiftExtensions
 
 class AppointmnetsViewController: UIViewController,SCPopDatePickerDelegate  {
     @IBOutlet weak var headerTitleLbl: UILabel!
@@ -38,8 +39,10 @@ class AppointmnetsViewController: UIViewController,SCPopDatePickerDelegate  {
     }
     //MARK:- Update UI
     func updateUI(){
-        self.completedViewInViewHeight.constant = 0
-        self.completedViewInView.isHidden = true
+        ez.runThisInMainThread {
+            self.completedViewInViewHeight.constant = 0
+            self.completedViewInView.isHidden = true
+        }
         TheGlobalPoolManager.cornerAndBorder(fromDatePickerBtn, cornerRadius: 8, borderWidth: 1, borderColor: .lightGray)
         TheGlobalPoolManager.cornerAndBorder(toDatePickerPtn, cornerRadius: 8, borderWidth: 1, borderColor: .lightGray)
         self.totalCallsBgView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 3.0, opacity: 0.35 ,cornerRadius : 8)
@@ -59,7 +62,7 @@ class AppointmnetsViewController: UIViewController,SCPopDatePickerDelegate  {
             self.completedViewInView.isHidden = true
             tableView.reloadData()
         case 2:
-            self.completedViewInViewHeight.constant = 95
+            self.completedViewInViewHeight.constant = UIDevice.isPhone() ? 95 :120
             self.completedViewInView.isHidden = false
             tableView.reloadData()
         default:
@@ -118,7 +121,7 @@ extension AppointmnetsViewController: UITableViewDataSource,UITableViewDelegate 
         case 1:
             return UITableViewAutomaticDimension
         case 2:
-            return 150
+            return UIDevice.isPhone() ? 150 : 200
         default:
             break
         }

@@ -49,7 +49,7 @@ class CalenderView: UIView {
         self.contentView.frame = self.bounds
         self.contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         calenderViewInView.appearance.headerDateFormat = "MMMM"
-        calenderViewInView.appearance.headerTitleFont = UIFont.init(name: "Lato-Bold", size: 16.0)
+        calenderViewInView.appearance.headerTitleFont = UIFont.init(name: "Lato-Bold", size: UIDevice.isPhone() ? 16.0 : 20.0)
         calenderViewInView.appearance.selectionColor = #colorLiteral(red: 0.9921568627, green: 0.7960784314, blue: 0.431372549, alpha: 1)
         calenderViewInView.scrollDirection = .horizontal
         calenderViewInView.delegate = self

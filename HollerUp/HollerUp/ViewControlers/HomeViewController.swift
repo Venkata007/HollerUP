@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EZSwiftExtensions
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var imgView: UIImageView!
@@ -18,6 +19,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var setAvailabiltyBgView: UIView!
     @IBOutlet weak var graphView: GraphView!
     @IBOutlet weak var detailsViewInView: UIView!
+    @IBOutlet weak var upcomingCallsView: UIView!
+    @IBOutlet weak var upcomingCallsViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var upcomingRegardingLbl: UILabel!
+    @IBOutlet weak var upcomingSlotLbl: UILabel!
+    @IBOutlet weak var upcomingNameLbl: NSLayoutConstraint!
+    @IBOutlet weak var upcomingProfileImg: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var dataSource = [[QUATER_TITLE:"Q1",
                        AMOUNT:"1000",
@@ -39,10 +47,22 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        collectionView.register(UINib(nibName: CollectionViewCellIdentifiers.UpcomingCallsCell, bundle: nil), forCellWithReuseIdentifier: CollectionViewCellIdentifiers.UpcomingCallsCell)
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        collectionView.allowsMultipleSelection = false
+        collectionView.allowsSelection = true
         self.updateUI()
     }
     //MARK:- Update UI
     func updateUI(){
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: 70, height: 70)
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
+        layout.scrollDirection = .horizontal
+        collectionView!.collectionViewLayout = layout
         self.detailsViewInView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.lightGray, radius: 2.0, opacity: 0.35 ,cornerRadius : 0)
         self.setAvailablitySwitch.onTintColor = .themeColor
         self.setAvailablitySwitch.tintColor = .redColor
@@ -53,4 +73,24 @@ class HomeViewController: UIViewController {
         TheGlobalPoolManager.cornerAndBorder(self.setAvailabiltyBgView, cornerRadius: 0, borderWidth: 0.5, borderColor: .lightGray)
     }
     //MARK:- IB Action Outlets
+}
+extension HomeViewController : UICollectionViewDataSource,UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        return 7
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellIdentifiers.UpcomingCallsCell, for: indexPath as IndexPath) as! UpcomingCallsCell
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! UpcomingCallsCell
+        if cell.isSelected{
+            cell.cellSelected(true)
+        }else{
+            cell.cellSelected(false)
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 70, height: 70);
+    }
 }

@@ -89,7 +89,7 @@ public struct TableViewCellIdentifiers{
 }
 //MARK:- XIB Names
 public struct CollectionViewCellIdentifiers{
-    static let AppointmentCell                               =  "AppointmentCell"
+    static let UpcomingCallsCell                             =  "UpcomingCallsCell"
 }
 public struct ApiParams  {
     static let Staus_Code        = "statusCode"

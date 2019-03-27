@@ -101,6 +101,7 @@ extension CalendarViewController: UITableViewDataSource,UITableViewDelegate {
             cell?.textLabel?.text = "Upcoming Appointments"
             cell?.textLabel?.font = UIFont.appFont(.Bold, size: 20)
             cell?.textLabel?.textColor = .themeColor
+            cell?.selectionStyle = .none
             return cell!
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.AppointmentCell) as! AppointmentCell
@@ -109,7 +110,9 @@ extension CalendarViewController: UITableViewDataSource,UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.row != 0{
+           self.UpcomingDetailsViewPopUpView()
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
@@ -119,5 +122,12 @@ extension CalendarViewController: UITableViewDataSource,UITableViewDelegate {
             return UIDevice.isPhone() ? 30 : 60
         }
         return  UIDevice.isPhone() ? 100 : 120
+    }
+}
+extension CalendarViewController{
+    //MARK: - Upcoming Details View
+    @objc func UpcomingDetailsViewPopUpView(){
+        let viewCon = UpcomingDetailsView(nibName: "UpcomingDetailsView", bundle: nil)
+        self.presentPopupViewController(viewCon, animationType: MJPopupViewAnimationSlideTopTop)
     }
 }

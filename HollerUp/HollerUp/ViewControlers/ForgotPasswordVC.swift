@@ -120,7 +120,7 @@ extension ForgotPasswordVC : UITextFieldDelegate{
         UIView.commitAnimations()
     }
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        //self.view.endEditing(true)
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
