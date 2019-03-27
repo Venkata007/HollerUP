@@ -17,7 +17,7 @@ public enum SCDatePickerType {
     }
 }
 
-open class SCPopDatePicker: UIView, UIGestureRecognizerDelegate {
+open class PickerView : UIView, UIGestureRecognizerDelegate {
     
     //Delegate
     var delegate: SCPopDatePickerDelegate?
@@ -97,7 +97,7 @@ open class SCPopDatePicker: UIView, UIGestureRecognizerDelegate {
         }) 
         
         if tapToDismiss {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(SCPopDatePicker.dismiss(_:)))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(PickerView.dismiss(_:)))
             tap.delegate = self
             self.containerView.addGestureRecognizer(tap)
         }
@@ -116,7 +116,7 @@ open class SCPopDatePicker: UIView, UIGestureRecognizerDelegate {
             UIView.animate(withDuration: 0.05, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.containerView.alpha = 0
                 }, completion: { (success:Bool) in
-                    self.containerView.removeGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(SCPopDatePicker.dismiss(_:))))
+                    self.containerView.removeGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(PickerView.dismiss(_:))))
                     self.containerView.removeFromSuperview()
                     self.removeFromSuperview()
             })
@@ -167,7 +167,7 @@ open class SCPopDatePicker: UIView, UIGestureRecognizerDelegate {
         btn.titleLabel?.font = UIFont.appFont(.Medium)
         btn.tintColor = self.btnFontColour
         btn.backgroundColor = self.btnColour
-        btn.addTarget(self, action: #selector(SCPopDatePicker.didSelectDate(_:)), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(PickerView.didSelectDate(_:)), for: .touchUpInside)
         
         //Round .Left / .Right Corners of DatePicker View
         if showCornerRadius {

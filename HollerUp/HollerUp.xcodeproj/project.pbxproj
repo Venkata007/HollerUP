@@ -60,6 +60,7 @@
 		A38525452248EF380063CD88 /* RejectPopUpOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38525432248EF380063CD88 /* RejectPopUpOptions.xib */; };
 		A3973AA6224B434300F81765 /* UpcomingCallsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973AA4224B434300F81765 /* UpcomingCallsCell.swift */; };
 		A3973AA7224B434300F81765 /* UpcomingCallsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3973AA5224B434300F81765 /* UpcomingCallsCell.xib */; };
+		A3973AAC224B6E7E00F81765 /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3973AAB224B6E7E00F81765 /* PickerView.xib */; };
 		A397AC642237BC8700FE1F1C /* PaymentHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A397AC622237BC8700FE1F1C /* PaymentHeaderCell.swift */; };
 		A397AC652237BC8700FE1F1C /* PaymentHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A397AC632237BC8700FE1F1C /* PaymentHeaderCell.xib */; };
 		A397AC682237BCAC00FE1F1C /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A397AC662237BCAC00FE1F1C /* PaymentCell.swift */; };
@@ -79,7 +80,7 @@
 		A3F0C92C224902B800149539 /* UpcomingDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F0C92A224902B800149539 /* UpcomingDetailsView.xib */; };
 		A3F0C92F2249DDEA00149539 /* RejectOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F0C92D2249DDEA00149539 /* RejectOptionsCell.swift */; };
 		A3F0C9302249DDEA00149539 /* RejectOptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F0C92E2249DDEA00149539 /* RejectOptionsCell.xib */; };
-		A3F0C9322249EE6D00149539 /* SCPopDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F0C9312249EE6D00149539 /* SCPopDatePicker.swift */; };
+		A3F0C9322249EE6D00149539 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F0C9312249EE6D00149539 /* PickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +144,7 @@
 		A38525432248EF380063CD88 /* RejectPopUpOptions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RejectPopUpOptions.xib; sourceTree = "<group>"; };
 		A3973AA4224B434300F81765 /* UpcomingCallsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCallsCell.swift; sourceTree = "<group>"; };
 		A3973AA5224B434300F81765 /* UpcomingCallsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingCallsCell.xib; sourceTree = "<group>"; };
+		A3973AAB224B6E7E00F81765 /* PickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
 		A397AC622237BC8700FE1F1C /* PaymentHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHeaderCell.swift; sourceTree = "<group>"; };
 		A397AC632237BC8700FE1F1C /* PaymentHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHeaderCell.xib; sourceTree = "<group>"; };
 		A397AC662237BCAC00FE1F1C /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
@@ -162,7 +164,7 @@
 		A3F0C92A224902B800149539 /* UpcomingDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingDetailsView.xib; sourceTree = "<group>"; };
 		A3F0C92D2249DDEA00149539 /* RejectOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectOptionsCell.swift; sourceTree = "<group>"; };
 		A3F0C92E2249DDEA00149539 /* RejectOptionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RejectOptionsCell.xib; sourceTree = "<group>"; };
-		A3F0C9312249EE6D00149539 /* SCPopDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCPopDatePicker.swift; sourceTree = "<group>"; };
+		A3F0C9312249EE6D00149539 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		C601918E29C17A2BC0C23ADB /* Pods-HollerUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HollerUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HollerUp/Pods-HollerUp.release.xcconfig"; sourceTree = "<group>"; };
 		D6498C7E7A5A996EE1306517 /* Pods_HollerUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HollerUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -261,7 +263,6 @@
 				A30B852F222FC4F1009A7A96 /* ConstanstsUsed.swift */,
 				A30B8530222FC4F1009A7A96 /* WebViewViewController.swift */,
 				A371A4C422314C5E00F6D7C0 /* TabBarController.swift */,
-				A3F0C9312249EE6D00149539 /* SCPopDatePicker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -311,6 +312,7 @@
 		A371A4E322326EB700F6D7C0 /* XIBS */ = {
 			isa = PBXGroup;
 			children = (
+				A3973AA8224B6E5B00F81765 /* Picker View */,
 				A3844CEF223B91E600870D92 /* CalenderView */,
 				A3844CE5223A7D3A00870D92 /* Graph */,
 				A371A4E422326EDF00F6D7C0 /* Appointment Cell */,
@@ -391,6 +393,15 @@
 				A3973AA5224B434300F81765 /* UpcomingCallsCell.xib */,
 			);
 			path = "Upcoming Calls";
+			sourceTree = "<group>";
+		};
+		A3973AA8224B6E5B00F81765 /* Picker View */ = {
+			isa = PBXGroup;
+			children = (
+				A3F0C9312249EE6D00149539 /* PickerView.swift */,
+				A3973AAB224B6E7E00F81765 /* PickerView.xib */,
+			);
+			path = "Picker View";
 			sourceTree = "<group>";
 		};
 		A397AC612237BC4F00FE1F1C /* Payments */ = {
@@ -487,6 +498,7 @@
 				A371A4FC22378F6300F6D7C0 /* Lato-Medium.ttf in Resources */,
 				A371A4F422378F6300F6D7C0 /* Lato-Italic.ttf in Resources */,
 				A38525452248EF380063CD88 /* RejectPopUpOptions.xib in Resources */,
+				A3973AAC224B6E7E00F81765 /* PickerView.xib in Resources */,
 				A371A4F522378F6300F6D7C0 /* Lato-Bold.ttf in Resources */,
 				A397AC7D2237DD8600FE1F1C /* LogoutCell.xib in Resources */,
 				A371A4FB22378F6300F6D7C0 /* Lato-BoldItalic.ttf in Resources */,
@@ -568,7 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3F0C9322249EE6D00149539 /* SCPopDatePicker.swift in Sources */,
+				A3F0C9322249EE6D00149539 /* PickerView.swift in Sources */,
 				A30B8549222FC4F2009A7A96 /* WebViewViewController.swift in Sources */,
 				A30B8545222FC4F2009A7A96 /* ExtensionClass.swift in Sources */,
 				A38525402248E7910063CD88 /* CompletedCell.swift in Sources */,

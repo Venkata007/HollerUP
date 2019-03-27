@@ -20,7 +20,7 @@ class AppointmnetsViewController: UIViewController,SCPopDatePickerDelegate  {
     @IBOutlet weak var fromDatePickerBtn: UIButton!
     @IBOutlet weak var toDatePickerPtn: UIButton!
     
-    let datePicker = SCPopDatePicker()
+    let datePicker = PickerView()
     var selectedBtn : String!
     let date = Date()
     var startTime : String!

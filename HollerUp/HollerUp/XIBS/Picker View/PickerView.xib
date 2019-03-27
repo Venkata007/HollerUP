@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PickerView" customModule="HollerUp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="220"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyS-5w-f73">
+                    <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rk-gF-6NU">
+                            <rect key="frame" x="67.5" y="8" width="195" height="34"/>
+                            <attributedString key="attributedText">
+                                <fragment content="From ">
+                                    <attributes>
+                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <font key="NSFont" size="16" name="Lato-Medium"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="Wednesday 9th September, 09:40am">
+                                    <attributes>
+                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <font key="NSFont" size="12" name="Lato-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                            <variation key="heightClass=regular-widthClass=regular">
+                                <attributedString key="attributedText">
+                                    <fragment content="From">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="18" name="Lato-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="16" name="Lato-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Wednesday 9th September, 09:40am">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="14" name="Lato-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </variation>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="0VC-uK-pZM"/>
+                        <constraint firstItem="6Rk-gF-6NU" firstAttribute="centerY" secondItem="WyS-5w-f73" secondAttribute="centerY" id="FUs-wM-phg"/>
+                        <constraint firstItem="6Rk-gF-6NU" firstAttribute="centerX" secondItem="WyS-5w-f73" secondAttribute="centerX" id="V2l-bN-NbH"/>
+                    </constraints>
+                </view>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="k9W-so-AXb">
+                    <rect key="frame" x="0.0" y="50" width="330" height="170"/>
+                    <date key="date" timeIntervalSinceReferenceDate="575369435.43712199">
+                        <!--2019-03-27 08:50:35 +0000-->
+                    </date>
+                </datePicker>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="k9W-so-AXb" secondAttribute="bottom" id="34E-Qb-p7s"/>
+                <constraint firstItem="WyS-5w-f73" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BzW-Rz-aZu"/>
+                <constraint firstItem="k9W-so-AXb" firstAttribute="top" secondItem="WyS-5w-f73" secondAttribute="bottom" id="IOe-zk-pFV"/>
+                <constraint firstItem="WyS-5w-f73" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Yif-Xp-bpj"/>
+                <constraint firstItem="k9W-so-AXb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ykk-Ye-hZ5"/>
+                <constraint firstItem="k9W-so-AXb" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="d4g-zx-XER"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WyS-5w-f73" secondAttribute="trailing" id="mgS-o8-NdB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="36.799999999999997" y="-148.42578710644679"/>
+        </view>
+    </objects>
+</document>
