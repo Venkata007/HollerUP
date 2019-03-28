@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EZSwiftExtensions
 
 class ProfileViewController: UIViewController {
 
@@ -35,6 +36,9 @@ class ProfileViewController: UIViewController {
     }
     //MARK:- IB Action Outlets
     @IBAction func editBtn(_ sender: UIButton) {
+        if let viewCon = self.storyboard?.instantiateViewController(withIdentifier: ViewControllerIDs.EditProfileViewController) as? EditProfileViewController{
+            self.navigationController?.pushViewController(viewCon, animated: true)
+        }
     }
 }
 extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {

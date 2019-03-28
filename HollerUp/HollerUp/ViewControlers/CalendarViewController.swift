@@ -18,6 +18,8 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector:#selector(CalendarViewController.addEventCalendar(notification:)), name: Notification.Name("AddButton_Calendar"), object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(CalendarViewController.synchCalendar(notification:)), name: Notification.Name("SyncButton_Calendar"), object: nil)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: TableViewCellIdentifiers.AppointmentCell, bundle: nil), forCellReuseIdentifier: TableViewCellIdentifiers.AppointmentCell)
@@ -129,5 +131,17 @@ extension CalendarViewController{
     @objc func UpcomingDetailsViewPopUpView(){
         let viewCon = UpcomingDetailsView(nibName: "UpcomingDetailsView", bundle: nil)
         self.presentPopupViewController(viewCon, animationType: MJPopupViewAnimationSlideTopTop)
+    }
+    @objc func addEventCalendar(notification: Notification){
+        if let viewCon = self.storyboard?.instantiateViewController(withIdentifier: ViewControllerIDs.AddCalendarEvent) as? AddCalendarEvent{
+            viewCon.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(viewCon, animated: true)
+        }
+    }
+    @objc func synchCalendar(notification: Notification){
+        if let viewCon = self.storyboard?.instantiateViewController(withIdentifier: ViewControllerIDs.SynchCalendarVC) as? SynchCalendarVC{
+            viewCon.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(viewCon, animated: true)
+        }
     }
 }

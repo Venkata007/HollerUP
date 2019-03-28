@@ -4,6 +4,7 @@ PODS:
   - FSCalendar (2.8.0)
   - IQKeyboardManagerSwift (6.2.0)
   - MMMaterialDesignSpinner (0.2.5)
+  - PopOverMenu (2.2.0)
   - SDWebImage (4.4.4):
     - SDWebImage/Core (= 4.4.4)
   - SDWebImage/Core (4.4.4)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - FSCalendar
   - IQKeyboardManagerSwift
   - MMMaterialDesignSpinner
+  - PopOverMenu
   - SDWebImage (~> 4.0)
   - SwiftyJSON (~> 4.2.0)
 
@@ -25,6 +27,7 @@ SPEC REPOS:
     - FSCalendar
     - IQKeyboardManagerSwift
     - MMMaterialDesignSpinner
+    - PopOverMenu
     - SDWebImage
     - SwiftyJSON
 
@@ -34,9 +37,10 @@ SPEC CHECKSUMS:
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   MMMaterialDesignSpinner: a548042720c2e5f04212048483085d7942ac3e81
+  PopOverMenu: 89d26014f46964e3cf8b4f27540e36051b992a86
   SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: e97140d100dab678795ef8456335bbfae51852cd
+PODFILE CHECKSUM: e36ab2f3a6821dac72d4f446300abfd24776cc7a
 
 COCOAPODS: 1.5.3

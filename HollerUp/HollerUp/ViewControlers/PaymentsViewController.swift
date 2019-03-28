@@ -17,9 +17,19 @@ class PaymentsViewController: UIViewController,SCPopDatePickerDelegate{
     @IBOutlet weak var viewStatementViewInView: UIView!
     @IBOutlet weak var totalEarningsBgView: UIView!
     @IBOutlet weak var datesBgView: UIView!
-    @IBOutlet weak var viewStatementViewInViewHeight: NSLayoutConstraint!
     @IBOutlet weak var fromDatePickerBtn: UIButton!
     @IBOutlet weak var toDatePickerPtn: UIButton!
+    @IBOutlet weak var invoiceBtn: UIButton!
+    
+    // Unbilled Payment View
+    @IBOutlet weak var unbilledBgView: UIView!
+    @IBOutlet weak var contentLbl: UILabel!
+    @IBOutlet weak var amountLbl: UILabel!
+    @IBOutlet weak var totalAmountTF: UITextField!
+    @IBOutlet weak var enterAmountTF: UITextField!
+    @IBOutlet var radioBtns: [UIButton]!
+    @IBOutlet weak var transferBtn: UIButton!
+    
     
     let datePicker = PickerView()
     var selectedBtn : String!
@@ -31,88 +41,86 @@ class PaymentsViewController: UIViewController,SCPopDatePickerDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.tableView.register(UINib(nibName: TableViewCellIdentifiers.PaymentCell, bundle: nil), forCellReuseIdentifier: TableViewCellIdentifiers.PaymentCell)
-        self.tableView.register(UINib(nibName: TableViewCellIdentifiers.PaymentHeaderCell, bundle: nil), forCellReuseIdentifier: TableViewCellIdentifiers.PaymentHeaderCell)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.updateUI()
     }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
     //MARK:- Update UI
     func updateUI(){
-        self.viewStatementViewInView.isHidden = true
+        TheGlobalPoolManager.cornerAndBorder(totalAmountTF, cornerRadius: 8, borderWidth: 1, borderColor: .themeColor)
+        TheGlobalPoolManager.cornerAndBorder(enterAmountTF, cornerRadius: 8, borderWidth: 1, borderColor: .themeColor)
         TheGlobalPoolManager.cornerAndBorder(fromDatePickerBtn, cornerRadius: 8, borderWidth: 1, borderColor: .lightGray)
         TheGlobalPoolManager.cornerAndBorder(toDatePickerPtn, cornerRadius: 8, borderWidth: 1, borderColor: .lightGray)
         ez.runThisInMainThread {
             self.totalEarningsBgView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 3.0, opacity: 0.35 ,cornerRadius : 8)
             self.datesBgView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 3.0, opacity: 0.35 ,cornerRadius : 8)
+            self.transferBtn.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 3.0, opacity: 0.35 ,cornerRadius : 8)
         }
         self.tableView.tableFooterView = UIView()
         self.segmentControl.setTitleTextAttributes([NSAttributedStringKey.font: UIFont.appFont(.Bold)],for: .normal)
+        for btn in radioBtns{
+            if btn.tag == 0{
+                self .radioBtns(btn)
+            }
+        }
     }
     //MARK:- IB Action Outlets
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         switch segmentControl.selectedSegmentIndex {
         case 0:
-            ez.runThisInMainThread {
-                self.viewStatementViewInViewHeight.constant = 0
-                self.viewStatementViewInView.isHidden = true
-            }
-            self.tableView.reloadData()
+            self.tableView.isHidden = true
+            self.unbilledBgView.isHidden = false
+            break
         case 1:
-            self.viewStatementViewInViewHeight.constant =  UIDevice.isPhone() ? 95 :120
-            self.viewStatementViewInView.isHidden = false
+            self.tableView.isHidden = false
+            self.unbilledBgView.isHidden = true
             self.tableView.reloadData()
         default:
             break
         }
+    }
+    @IBAction func invoiceBtn(_ sender: UIButton) {
+    }
+    @IBAction func radioBtns(_ sender: UIButton) {
+        for button in radioBtns {
+            if button == sender {
+                button.isSelected = true
+                button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                if button.tag == 0{
+                    button.setImage(#imageLiteral(resourceName: "Radio_On"), for: .normal)
+                    totalAmountTF.isUserInteractionEnabled = true
+                    enterAmountTF.isUserInteractionEnabled = false
+                }
+                else  if button.tag == 1{
+                    button.setImage(#imageLiteral(resourceName: "Radio_On"), for: .normal)
+                    totalAmountTF.isUserInteractionEnabled = false
+                    enterAmountTF.isUserInteractionEnabled = true
+                }
+            }
+            else{
+                button.isSelected = false
+                button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                button.setImage(#imageLiteral(resourceName: "Radio_Off"), for: .normal)
+            }
+        }
+        
+    }
+    @IBAction func transferBtn(_ sender: UIButton) {
     }
 }
 extension PaymentsViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch segmentControl.selectedSegmentIndex {
-        case 0:
-            return 7
-        case 1:
-            return 6
-        default:
-            break
-        }
-        return 0
+        return 7
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch segmentControl.selectedSegmentIndex {
-        case 0:
-            if indexPath.row == 0{
-                let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.PaymentHeaderCell) as! PaymentHeaderCell
-                cell.selectionStyle = .none
-                return cell
-            }else{
-                let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.PaymentCell) as! PaymentCell
-                cell.selectionStyle = .none
-                return cell
-            }
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.PaymentCell) as! PaymentCell
-            cell.selectionStyle = .none
-            return cell
-        default:
-            break
-        }
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.PaymentCell) as! PaymentCell
+        cell.selectionStyle = .none
+        return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if segmentControl.selectedSegmentIndex == 0{
-            if indexPath.row == 0{
-                return  UIDevice.isPhone() ? 80 : 100
-            }
-            return  UIDevice.isPhone() ? 100 : 120
-        }else{
-             return  UIDevice.isPhone() ? 100 : 120
-        }
+        return  UIDevice.isPhone() ? 100 : 120
     }
 }
 extension PaymentsViewController{

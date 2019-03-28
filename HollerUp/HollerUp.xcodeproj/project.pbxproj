@@ -61,6 +61,8 @@
 		A3973AA6224B434300F81765 /* UpcomingCallsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973AA4224B434300F81765 /* UpcomingCallsCell.swift */; };
 		A3973AA7224B434300F81765 /* UpcomingCallsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3973AA5224B434300F81765 /* UpcomingCallsCell.xib */; };
 		A3973AAC224B6E7E00F81765 /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3973AAB224B6E7E00F81765 /* PickerView.xib */; };
+		A3973AAE224B751700F81765 /* AddCalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973AAD224B751700F81765 /* AddCalendarEvent.swift */; };
+		A3973AB0224B988B00F81765 /* SynchCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973AAF224B988B00F81765 /* SynchCalendarVC.swift */; };
 		A397AC642237BC8700FE1F1C /* PaymentHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A397AC622237BC8700FE1F1C /* PaymentHeaderCell.swift */; };
 		A397AC652237BC8700FE1F1C /* PaymentHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A397AC632237BC8700FE1F1C /* PaymentHeaderCell.xib */; };
 		A397AC682237BCAC00FE1F1C /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A397AC662237BCAC00FE1F1C /* PaymentCell.swift */; };
@@ -81,6 +83,7 @@
 		A3F0C92F2249DDEA00149539 /* RejectOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F0C92D2249DDEA00149539 /* RejectOptionsCell.swift */; };
 		A3F0C9302249DDEA00149539 /* RejectOptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F0C92E2249DDEA00149539 /* RejectOptionsCell.xib */; };
 		A3F0C9322249EE6D00149539 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F0C9312249EE6D00149539 /* PickerView.swift */; };
+		A3F13C8A224C9BF30054D68E /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F13C89224C9BF30054D68E /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +148,8 @@
 		A3973AA4224B434300F81765 /* UpcomingCallsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCallsCell.swift; sourceTree = "<group>"; };
 		A3973AA5224B434300F81765 /* UpcomingCallsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingCallsCell.xib; sourceTree = "<group>"; };
 		A3973AAB224B6E7E00F81765 /* PickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
+		A3973AAD224B751700F81765 /* AddCalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalendarEvent.swift; sourceTree = "<group>"; };
+		A3973AAF224B988B00F81765 /* SynchCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchCalendarVC.swift; sourceTree = "<group>"; };
 		A397AC622237BC8700FE1F1C /* PaymentHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHeaderCell.swift; sourceTree = "<group>"; };
 		A397AC632237BC8700FE1F1C /* PaymentHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHeaderCell.xib; sourceTree = "<group>"; };
 		A397AC662237BCAC00FE1F1C /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
@@ -165,6 +170,7 @@
 		A3F0C92D2249DDEA00149539 /* RejectOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectOptionsCell.swift; sourceTree = "<group>"; };
 		A3F0C92E2249DDEA00149539 /* RejectOptionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RejectOptionsCell.xib; sourceTree = "<group>"; };
 		A3F0C9312249EE6D00149539 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		A3F13C89224C9BF30054D68E /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		C601918E29C17A2BC0C23ADB /* Pods-HollerUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HollerUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HollerUp/Pods-HollerUp.release.xcconfig"; sourceTree = "<group>"; };
 		D6498C7E7A5A996EE1306517 /* Pods_HollerUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HollerUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -247,6 +253,9 @@
 				A371A4DD223256F400F6D7C0 /* HomeViewController.swift */,
 				A371A4DF2232571B00F6D7C0 /* CalendarViewController.swift */,
 				A371A4E12232572C00F6D7C0 /* ProfileViewController.swift */,
+				A3973AAD224B751700F81765 /* AddCalendarEvent.swift */,
+				A3973AAF224B988B00F81765 /* SynchCalendarVC.swift */,
+				A3F13C89224C9BF30054D68E /* EditProfileViewController.swift */,
 			);
 			path = ViewControlers;
 			sourceTree = "<group>";
@@ -555,6 +564,7 @@
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MMMaterialDesignSpinner/MMMaterialDesignSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/PopOverMenu/PopOverMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -565,6 +575,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMMaterialDesignSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopOverMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -582,8 +593,10 @@
 			files = (
 				A3F0C9322249EE6D00149539 /* PickerView.swift in Sources */,
 				A30B8549222FC4F2009A7A96 /* WebViewViewController.swift in Sources */,
+				A3F13C8A224C9BF30054D68E /* EditProfileViewController.swift in Sources */,
 				A30B8545222FC4F2009A7A96 /* ExtensionClass.swift in Sources */,
 				A38525402248E7910063CD88 /* CompletedCell.swift in Sources */,
+				A3973AB0224B988B00F81765 /* SynchCalendarVC.swift in Sources */,
 				A30B8542222FC4F2009A7A96 /* GlobalPool.swift in Sources */,
 				A371A4C522314C5F00F6D7C0 /* TabBarController.swift in Sources */,
 				A30B854A222FC4F2009A7A96 /* Reachability.m in Sources */,
@@ -606,6 +619,7 @@
 				A397AC722237CC1400FE1F1C /* DetailsCell.swift in Sources */,
 				A30B8543222FC4F2009A7A96 /* Constants.swift in Sources */,
 				A371A4DA223255D300F6D7C0 /* AppointmnetsViewController.swift in Sources */,
+				A3973AAE224B751700F81765 /* AddCalendarEvent.swift in Sources */,
 				A371A4E02232571B00F6D7C0 /* CalendarViewController.swift in Sources */,
 				A385253C2248E0A10063CD88 /* NewAppointmentCell.swift in Sources */,
 				A3852539224516C40063CD88 /* ChangePasswordVC.swift in Sources */,

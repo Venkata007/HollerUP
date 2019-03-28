@@ -29,6 +29,9 @@ public  struct ViewControllerIDs {
     static let ForgotPasswordVC                         = "ForgotPasswordVC"
     static let ResetPasswordVC                           = "ResetPasswordVC"
     static let ChangePasswordVC                      = "ChangePasswordVC"
+    static let AddCalendarEvent                        = "AddCalendarEvent"
+    static let SynchCalendarVC                          =  "SynchCalendarVC"
+    static let EditProfileViewController             = "EditProfileViewController"
 }
 //MARK : - Device INFO
 public struct DeviceInfo {
@@ -77,7 +80,6 @@ public struct Arrays {
 //MARK:- TableViewCellIdentifiers
 public struct TableViewCellIdentifiers{
     static let AppointmentCell                                = "AppointmentCell"
-    static let PaymentHeaderCell                           = "PaymentHeaderCell"
     static let PaymentCell                                         = "PaymentCell"
     static let NameCell                                              = "NameCell"
     static let DetailsCell                                            = "DetailsCell"
@@ -86,6 +88,8 @@ public struct TableViewCellIdentifiers{
     static let NewAppointmentCell                        = "NewAppointmentCell"
     static let CompletedCell                                    = "CompletedCell"
     static let RejectOptionsCell                               = "RejectOptionsCell"
+    static let SynchOptionsCell                               = "SynchOptionsCell"
+    static let UnbilledPaymentCell                          = "UnbilledPaymentCell"
 }
 //MARK:- XIB Names
 public struct CollectionViewCellIdentifiers{

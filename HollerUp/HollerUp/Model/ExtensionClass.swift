@@ -146,6 +146,9 @@ extension UIColor{
     static var disableColor:UIColor{
         return #colorLiteral(red: 0.6666666667, green: 0.6666666865, blue: 0.6666666865, alpha: 0.5) //AAAAAA Opacity 50%
     }
+    static var switchTintColor:UIColor{
+        return #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1) //4CD964
+    }
 }
 //MARK:- UIFont
 extension UIFont{

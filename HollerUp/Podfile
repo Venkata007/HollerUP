@@ -13,4 +13,5 @@ target 'HollerUp' do
   pod 'SDWebImage', '~> 4.0'
   pod 'EZSwiftExtensions'
   pod 'FSCalendar'
+  pod 'PopOverMenu'
 end

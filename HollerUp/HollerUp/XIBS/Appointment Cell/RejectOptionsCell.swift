@@ -24,8 +24,10 @@ class RejectOptionsCell: UITableViewCell {
     func cellSelected(_ isSelectedValue:Bool){
         if isSelectedValue{
             radioImg.isHighlighted = true
+            self.contentView.backgroundColor = .white
         }else{
             radioImg.isHighlighted = false
+            self.contentView.backgroundColor = .white
         }
     }
 }

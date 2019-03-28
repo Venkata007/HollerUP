@@ -8,6 +8,7 @@
 
 import UIKit
 import FSCalendar
+import EZSwiftExtensions
 class CalenderView: UIView {
 
     @IBOutlet var contentView: UIView!
@@ -101,10 +102,12 @@ class CalenderView: UIView {
             self.scrollYearAndMonth(.year, isFutureDate: true)
             break
         case self.syncBtn:
+            NotificationCenter.default.post(name: Notification.Name("SyncButton_Calendar"), object: nil)
             break
         case self.searchBtn:
             break
         case self.addBtn:
+             NotificationCenter.default.post(name: Notification.Name("AddButton_Calendar"), object: nil)
             break
         case self.leftMonthScroll:
             self.scrollYearAndMonth(.month, isFutureDate: false)
@@ -116,7 +119,6 @@ class CalenderView: UIView {
             break
         }
     }
-    
     
     func scrollYearAndMonth(_ unit:NSCalendar.Unit, isFutureDate:Bool){
         var checkDate:Date = self.calenderViewInView.minimumDate
