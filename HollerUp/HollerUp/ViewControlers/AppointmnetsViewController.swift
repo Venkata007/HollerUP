@@ -9,7 +9,7 @@
 import UIKit
 import EZSwiftExtensions
 
-class AppointmnetsViewController: UIViewController,SCPopDatePickerDelegate  {
+class AppointmnetsViewController: UIViewController,PickerViewDelegate  {
     @IBOutlet weak var headerTitleLbl: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -20,7 +20,7 @@ class AppointmnetsViewController: UIViewController,SCPopDatePickerDelegate  {
     @IBOutlet weak var fromDatePickerBtn: UIButton!
     @IBOutlet weak var toDatePickerPtn: UIButton!
     
-    let datePicker = PickerView()
+    var datePicker:PickerView!
     var selectedBtn : String!
     let date = Date()
     var startTime : String!
@@ -132,15 +132,15 @@ extension AppointmnetsViewController{
     //MARK: - Reject Appointmnet Pop Up
     @objc func rejectAppointmentPopUpView(){
         let viewCon = RejectPopUpOptions(nibName: "RejectPopUpOptions", bundle: nil)
-        self.presentPopupViewController(viewCon, animationType: MJPopupViewAnimationSlideTopTop)
+        self.presentPopupViewController(viewCon, animationType: MJPopupViewAnimationFade)
     }
     //MARK: - Upcoming Details View
     @objc func UpcomingDetailsViewPopUpView(){
         let viewCon = UpcomingDetailsView(nibName: "UpcomingDetailsView", bundle: nil)
-        self.presentPopupViewController(viewCon, animationType: MJPopupViewAnimationSlideTopTop)
+        self.presentPopupViewController(viewCon, animationType: MJPopupViewAnimationFade)
     }
     @objc func methodOfReceivedNotification(notification: Notification){
-        self.dismissPopupViewControllerWithanimationType(MJPopupViewAnimationSlideTopTop)
+        self.dismissPopupViewControllerWithanimationType(MJPopupViewAnimationFade)
     }
 }
 extension AppointmnetsViewController{
@@ -155,8 +155,10 @@ extension AppointmnetsViewController{
         self.datePickerView()
     }
     func datePickerView(){
+        self.datePicker = nil
+        self.datePicker = PickerView(frame: self.view.frame)
         self.datePicker.tapToDismiss = true
-        self.datePicker.datePickerType = SCDatePickerType.date
+        self.datePicker.datePickerMode = .time
         self.datePicker.showBlur = true
         self.datePicker.datePickerStartDate = self.date
         self.datePicker.btnFontColour = UIColor.white
@@ -166,7 +168,7 @@ extension AppointmnetsViewController{
         self.datePicker.show(attachToView: self.view)
     }
     //MARK : - Gertting Age  based on DOB
-    func scPopDatePickerDidSelectDate(_ date: Date) {
+    func pickerViewDidSelectDate(_ date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/YY"
         dateFormatter.timeZone = NSTimeZone.init(abbreviation: "UTC")! as TimeZone

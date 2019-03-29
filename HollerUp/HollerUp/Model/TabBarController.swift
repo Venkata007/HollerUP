@@ -74,7 +74,7 @@ class TabBarController: UITabBarController {
         tabBar.addSubview(button)
         
         view.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: 0.0));
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[button]-18-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[button]-\(self.tabBar.h - (unselectedImage.size.height/2))-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[button(==\(unselectedImage.size.width))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[button(==\(unselectedImage.size.height))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
         

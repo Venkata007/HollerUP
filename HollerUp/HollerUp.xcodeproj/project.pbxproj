@@ -60,7 +60,6 @@
 		A38525452248EF380063CD88 /* RejectPopUpOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38525432248EF380063CD88 /* RejectPopUpOptions.xib */; };
 		A3973AA6224B434300F81765 /* UpcomingCallsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973AA4224B434300F81765 /* UpcomingCallsCell.swift */; };
 		A3973AA7224B434300F81765 /* UpcomingCallsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3973AA5224B434300F81765 /* UpcomingCallsCell.xib */; };
-		A3973AAC224B6E7E00F81765 /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3973AAB224B6E7E00F81765 /* PickerView.xib */; };
 		A3973AAE224B751700F81765 /* AddCalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973AAD224B751700F81765 /* AddCalendarEvent.swift */; };
 		A3973AB0224B988B00F81765 /* SynchCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973AAF224B988B00F81765 /* SynchCalendarVC.swift */; };
 		A397AC642237BC8700FE1F1C /* PaymentHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A397AC622237BC8700FE1F1C /* PaymentHeaderCell.swift */; };
@@ -78,12 +77,18 @@
 		A3A2B5AD2245056300C7E8CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A2B5AC2245056300C7E8CB /* LoginViewController.swift */; };
 		A3A2B5AF22450B6000C7E8CB /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A2B5AE22450B6000C7E8CB /* ForgotPasswordVC.swift */; };
 		A3A2B5B12245103700C7E8CB /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A2B5B02245103700C7E8CB /* ResetPasswordVC.swift */; };
+		A3EE5D57224DEF2200779E3F /* PaymentsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE5D56224DEF2200779E3F /* PaymentsDetailsVC.swift */; };
+		A3EE5DA7224E3D9200779E3F /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE5DA5224E3D9200779E3F /* PickerView.swift */; };
+		A3EE5DA8224E3D9200779E3F /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3EE5DA6224E3D9200779E3F /* PickerView.xib */; };
 		A3F0C92B224902B800149539 /* UpcomingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F0C929224902B800149539 /* UpcomingDetailsView.swift */; };
 		A3F0C92C224902B800149539 /* UpcomingDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F0C92A224902B800149539 /* UpcomingDetailsView.xib */; };
 		A3F0C92F2249DDEA00149539 /* RejectOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F0C92D2249DDEA00149539 /* RejectOptionsCell.swift */; };
 		A3F0C9302249DDEA00149539 /* RejectOptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F0C92E2249DDEA00149539 /* RejectOptionsCell.xib */; };
-		A3F0C9322249EE6D00149539 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F0C9312249EE6D00149539 /* PickerView.swift */; };
 		A3F13C8A224C9BF30054D68E /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F13C89224C9BF30054D68E /* EditProfileViewController.swift */; };
+		A3F1DBD8224CC2FA00D7663E /* EditProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1DBD6224CC2FA00D7663E /* EditProfileHeaderCell.swift */; };
+		A3F1DBD9224CC2FA00D7663E /* EditProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F1DBD7224CC2FA00D7663E /* EditProfileHeaderCell.xib */; };
+		A3F1DBDF224CF6AC00D7663E /* PersonalDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1DBDE224CF6AC00D7663E /* PersonalDetailsVC.swift */; };
+		A3F1DBE1224D027A00D7663E /* ProfessionalDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1DBE0224D027A00D7663E /* ProfessionalDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,7 +152,6 @@
 		A38525432248EF380063CD88 /* RejectPopUpOptions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RejectPopUpOptions.xib; sourceTree = "<group>"; };
 		A3973AA4224B434300F81765 /* UpcomingCallsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCallsCell.swift; sourceTree = "<group>"; };
 		A3973AA5224B434300F81765 /* UpcomingCallsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingCallsCell.xib; sourceTree = "<group>"; };
-		A3973AAB224B6E7E00F81765 /* PickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
 		A3973AAD224B751700F81765 /* AddCalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalendarEvent.swift; sourceTree = "<group>"; };
 		A3973AAF224B988B00F81765 /* SynchCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchCalendarVC.swift; sourceTree = "<group>"; };
 		A397AC622237BC8700FE1F1C /* PaymentHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHeaderCell.swift; sourceTree = "<group>"; };
@@ -165,12 +169,18 @@
 		A3A2B5AC2245056300C7E8CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A3A2B5AE22450B6000C7E8CB /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		A3A2B5B02245103700C7E8CB /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		A3EE5D56224DEF2200779E3F /* PaymentsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsDetailsVC.swift; sourceTree = "<group>"; };
+		A3EE5DA5224E3D9200779E3F /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		A3EE5DA6224E3D9200779E3F /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
 		A3F0C929224902B800149539 /* UpcomingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDetailsView.swift; sourceTree = "<group>"; };
 		A3F0C92A224902B800149539 /* UpcomingDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingDetailsView.xib; sourceTree = "<group>"; };
 		A3F0C92D2249DDEA00149539 /* RejectOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectOptionsCell.swift; sourceTree = "<group>"; };
 		A3F0C92E2249DDEA00149539 /* RejectOptionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RejectOptionsCell.xib; sourceTree = "<group>"; };
-		A3F0C9312249EE6D00149539 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		A3F13C89224C9BF30054D68E /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		A3F1DBD6224CC2FA00D7663E /* EditProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileHeaderCell.swift; sourceTree = "<group>"; };
+		A3F1DBD7224CC2FA00D7663E /* EditProfileHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileHeaderCell.xib; sourceTree = "<group>"; };
+		A3F1DBDE224CF6AC00D7663E /* PersonalDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsVC.swift; sourceTree = "<group>"; };
+		A3F1DBE0224D027A00D7663E /* ProfessionalDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalDetailsVC.swift; sourceTree = "<group>"; };
 		C601918E29C17A2BC0C23ADB /* Pods-HollerUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HollerUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HollerUp/Pods-HollerUp.release.xcconfig"; sourceTree = "<group>"; };
 		D6498C7E7A5A996EE1306517 /* Pods_HollerUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HollerUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -256,6 +266,9 @@
 				A3973AAD224B751700F81765 /* AddCalendarEvent.swift */,
 				A3973AAF224B988B00F81765 /* SynchCalendarVC.swift */,
 				A3F13C89224C9BF30054D68E /* EditProfileViewController.swift */,
+				A3F1DBDE224CF6AC00D7663E /* PersonalDetailsVC.swift */,
+				A3F1DBE0224D027A00D7663E /* ProfessionalDetailsVC.swift */,
+				A3EE5D56224DEF2200779E3F /* PaymentsDetailsVC.swift */,
 			);
 			path = ViewControlers;
 			sourceTree = "<group>";
@@ -321,6 +334,7 @@
 		A371A4E322326EB700F6D7C0 /* XIBS */ = {
 			isa = PBXGroup;
 			children = (
+				A3F1DBD5224CC27900D7663E /* Edit Profile */,
 				A3973AA8224B6E5B00F81765 /* Picker View */,
 				A3844CEF223B91E600870D92 /* CalenderView */,
 				A3844CE5223A7D3A00870D92 /* Graph */,
@@ -407,8 +421,8 @@
 		A3973AA8224B6E5B00F81765 /* Picker View */ = {
 			isa = PBXGroup;
 			children = (
-				A3F0C9312249EE6D00149539 /* PickerView.swift */,
-				A3973AAB224B6E7E00F81765 /* PickerView.xib */,
+				A3EE5DA5224E3D9200779E3F /* PickerView.swift */,
+				A3EE5DA6224E3D9200779E3F /* PickerView.xib */,
 			);
 			path = "Picker View";
 			sourceTree = "<group>";
@@ -437,6 +451,15 @@
 				A397AC7B2237DD8600FE1F1C /* LogoutCell.xib */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		A3F1DBD5224CC27900D7663E /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A3F1DBD6224CC2FA00D7663E /* EditProfileHeaderCell.swift */,
+				A3F1DBD7224CC2FA00D7663E /* EditProfileHeaderCell.xib */,
+			);
+			path = "Edit Profile";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,7 +530,6 @@
 				A371A4FC22378F6300F6D7C0 /* Lato-Medium.ttf in Resources */,
 				A371A4F422378F6300F6D7C0 /* Lato-Italic.ttf in Resources */,
 				A38525452248EF380063CD88 /* RejectPopUpOptions.xib in Resources */,
-				A3973AAC224B6E7E00F81765 /* PickerView.xib in Resources */,
 				A371A4F522378F6300F6D7C0 /* Lato-Bold.ttf in Resources */,
 				A397AC7D2237DD8600FE1F1C /* LogoutCell.xib in Resources */,
 				A371A4FB22378F6300F6D7C0 /* Lato-BoldItalic.ttf in Resources */,
@@ -520,7 +542,9 @@
 				A371A4F922378F6300F6D7C0 /* Lato-Semibold.ttf in Resources */,
 				A371A4F822378F6300F6D7C0 /* Lato-BlackItalic.ttf in Resources */,
 				A3844CEC223A7D3A00870D92 /* CollectionViewCell.xib in Resources */,
+				A3EE5DA8224E3D9200779E3F /* PickerView.xib in Resources */,
 				A30B8519222FC422009A7A96 /* Main.storyboard in Resources */,
+				A3F1DBD9224CC2FA00D7663E /* EditProfileHeaderCell.xib in Resources */,
 				A397AC732237CC1400FE1F1C /* DetailsCell.xib in Resources */,
 				A371A4E822326F2C00F6D7C0 /* AppointmentCell.xib in Resources */,
 				A3973AA7224B434300F81765 /* UpcomingCallsCell.xib in Resources */,
@@ -591,12 +615,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3F0C9322249EE6D00149539 /* PickerView.swift in Sources */,
 				A30B8549222FC4F2009A7A96 /* WebViewViewController.swift in Sources */,
 				A3F13C8A224C9BF30054D68E /* EditProfileViewController.swift in Sources */,
 				A30B8545222FC4F2009A7A96 /* ExtensionClass.swift in Sources */,
 				A38525402248E7910063CD88 /* CompletedCell.swift in Sources */,
 				A3973AB0224B988B00F81765 /* SynchCalendarVC.swift in Sources */,
+				A3EE5D57224DEF2200779E3F /* PaymentsDetailsVC.swift in Sources */,
+				A3F1DBD8224CC2FA00D7663E /* EditProfileHeaderCell.swift in Sources */,
 				A30B8542222FC4F2009A7A96 /* GlobalPool.swift in Sources */,
 				A371A4C522314C5F00F6D7C0 /* TabBarController.swift in Sources */,
 				A30B854A222FC4F2009A7A96 /* Reachability.m in Sources */,
@@ -609,11 +634,14 @@
 				A397AC782237CC8900FE1F1C /* ProfileDetailsCell.swift in Sources */,
 				A30B854F222FC4F2009A7A96 /* UIViewController+MJPopupViewController.m in Sources */,
 				A3F0C92B224902B800149539 /* UpcomingDetailsView.swift in Sources */,
+				A3F1DBDF224CF6AC00D7663E /* PersonalDetailsVC.swift in Sources */,
 				A30B8540222FC4F2009A7A96 /* ViewController.swift in Sources */,
 				A30B8547222FC4F2009A7A96 /* ShadowView.swift in Sources */,
 				A397AC7C2237DD8600FE1F1C /* LogoutCell.swift in Sources */,
 				A30B854C222FC4F2009A7A96 /* ToastView.swift in Sources */,
+				A3F1DBE1224D027A00D7663E /* ProfessionalDetailsVC.swift in Sources */,
 				A30B8546222FC4F2009A7A96 /* String.swift in Sources */,
+				A3EE5DA7224E3D9200779E3F /* PickerView.swift in Sources */,
 				A3844CF2223B91E600870D92 /* CalenderView.swift in Sources */,
 				A3F0C92F2249DDEA00149539 /* RejectOptionsCell.swift in Sources */,
 				A397AC722237CC1400FE1F1C /* DetailsCell.swift in Sources */,

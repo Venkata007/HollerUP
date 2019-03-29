@@ -58,6 +58,8 @@ class CalenderView: UIView {
         calenderViewInView.allowsSelection = true
         calenderViewInView.headerHeight = 50.0
         let dateString = self.formatter.string(from: calenderViewInView.currentPage).components(separatedBy: "/")
+        self.leftArrow.setImage(#imageLiteral(resourceName: "Backward").withColor(.themeColor1), for: .normal)
+        self.rightArrow.setImage(#imageLiteral(resourceName: "Farward").withColor(.themeColor1), for: .normal)
         self.yearBtn.setTitle(dateString[0], for: .normal)
         self.leftArrow.addTarget(self, action: #selector(self.buttonActions(_:)), for: .touchUpInside)
         self.yearBtn.addTarget(self, action: #selector(self.buttonActions(_:)), for: .touchUpInside)
@@ -74,11 +76,11 @@ class CalenderView: UIView {
             print(height)
             self.leftMonthScroll = UIButton(frame: CGRect(x: 0, y: 0, width: height, height: height))
             self.leftMonthScroll.addTarget(self, action: #selector(self.buttonActions(_:)), for: .touchUpInside)
-            self.leftMonthScroll.setImage(#imageLiteral(resourceName: "leftArrow"), for: .normal)
+            self.leftMonthScroll.setImage(#imageLiteral(resourceName: "Backward").withColor(.themeColor1), for: .normal)
             self.rightMonthScroll = UIButton(frame: CGRect(x: self.bounds.width-height, y: 0, width: height, height: height))
             self.rightMonthScroll.addTarget(self, action: #selector(self.buttonActions(_:)), for: .touchUpInside)
             print(self.rightMonthScroll)
-            self.rightMonthScroll.setImage(#imageLiteral(resourceName: "rightArrow"), for: .normal)
+            self.rightMonthScroll.setImage(#imageLiteral(resourceName: "Farward").withColor(.themeColor1), for: .normal)
             self.calenderViewInView.addSubview(self.leftMonthScroll)
             self.calenderViewInView.addSubview(self.rightMonthScroll)
         }

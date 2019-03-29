@@ -1,195 +1,195 @@
+//
+//  PickerView.swift
+//  HollerUp
+//
+//  Created by Hexadots on 27/03/19.
+//  Copyright © 2019 iOSDevelopers. All rights reserved.
+//
+
 import UIKit
 import EZSwiftExtensions
-protocol SCPopDatePickerDelegate: NSObjectProtocol {
-    func scPopDatePickerDidSelectDate(_ date: Date)
+
+protocol PickerViewDelegate: NSObjectProtocol {
+    func pickerViewDidSelectDate(_ date: Date)
 }
 
-
-//DatePicker Mode
-public enum SCDatePickerType {
-    case date, time, countdown
-    public func dateType() -> UIDatePickerMode {
-        switch self {
-        case SCDatePickerType.date: return .date
-        case SCDatePickerType.time: return .dateAndTime
-        case SCDatePickerType.countdown: return .countDownTimer
-        }
-    }
-}
-
-open class PickerView : UIView, UIGestureRecognizerDelegate {
+class PickerView: UIView, UIGestureRecognizerDelegate {
+    
+    @IBOutlet weak var datePickerView: UIDatePicker!
+    @IBOutlet var contentView: UIView!
+    @IBOutlet weak var selectedBtn: UIButton!
+    
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var pickerSuperView: UIView!
+    @IBOutlet weak var headerdateLbl: UILabel!
     
     //Delegate
-    var delegate: SCPopDatePickerDelegate?
-    
-    //Properties
-    fileprivate var containerView: UIView!
-    fileprivate var contentView: UIView!
-    fileprivate var backgroundView: UIView!
-    fileprivate var datePickerView: UIDatePicker!
+    var delegate: PickerViewDelegate?
     
     //Custom Properties
     open var showBlur = true //Default Yes
-    open var datePickerType: SCDatePickerType!
     open var tapToDismiss = true //Default Yes
-    open var btnFontColour = UIColor.blue //Default Blue
-    open var btnColour = UIColor.clear //Default Clear
-    open var datePickerStartDate = Date() //Optional
     open var showShadow = true //Optional
     open var showCornerRadius = true // Optional
     
+    @IBInspectable var btnFontColour: UIColor = .whiteColor {
+        didSet {
+            self.updateProperties()
+        }
+    }
     
-    public init() {
-        super.init(frame: CGRect.zero)
-        self.backgroundColor = UIColor.clear
-        
+    @IBInspectable var btnTitle: String = "Select" {
+        didSet {
+            self.updateProperties()
+        }
+    }
+    
+    @IBInspectable var btnFont: UIFont = UIFont.appFont(.Medium) {
+        didSet {
+            self.updateProperties()
+        }
+    }
+    
+    @IBInspectable var btnColour: UIColor = .themeColor {
+        didSet {
+            self.updateProperties()
+        }
+    }
+    
+    @IBInspectable var datePickerStartDate: Date = Date() {
+        didSet {
+            self.updateProperties()
+        }
+    }
+    
+    @IBInspectable var datePickerMode: UIDatePickerMode = UIDatePickerMode.date {
+        didSet {
+            self.updateProperties()
+        }
+    }
+    
+    @IBInspectable var datePickerTimeInterval: Int = 1 {
+        didSet {
+            self.updateProperties()
+        }
+    }
+    
+    @IBInspectable var nameLbl: String = "From" {
+        didSet {
+            self.updateProperties()
+        }
+    }
+    
+    func updateProperties(){
+        self.selectedBtn.setTitle(btnTitle, for: .normal)
+        self.selectedBtn.titleLabel?.font = btnFont
+        self.selectedBtn.tintColor = self.btnFontColour
+        self.selectedBtn.backgroundColor = self.btnColour
+        self.datePickerView.date = self.datePickerStartDate
+        self.datePickerView.datePickerMode = self.datePickerMode
+        self.datePickerView.minuteInterval = self.datePickerTimeInterval
+        ez.runThisInMainThread {
+            let dateFormatter: DateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE dd'th' MMMM,  hh:mm a"
+            let selectedDate: String = dateFormatter.string(from: Date())
+            self.headerdateLbl.attributedText = TheGlobalPoolManager.attributedTextWithTwoDifferentTextsWithFont(self.nameLbl + "\n", attr2Text: selectedDate, attr1Color: .whiteColor, attr2Color: .whiteColor, attr1Font: UIDevice.isPhone() ? 16 : 18, attr2Font: UIDevice.isPhone() ? 14 : 16, attr1FontName: AppFonts.Medium, attr2FontName: AppFonts.Regular)
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.commonInit()
+    }
+    
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
+    private func commonInit(){
+        Bundle.main.loadNibNamed("PickerView", owner: self, options: nil)
+        self.contentView.w = ez.screenWidth
+        self.contentView.h = ez.topMostVC?.view.bounds.height ?? 0
+        self.addSubview(self.contentView)
+    }
+
+    @IBAction func selectDateBtn(_ sender: UIButton) {
+        if delegate != nil {
+            self.delegate?.pickerViewDidSelectDate(self.datePickerView.date)
+            self.dismiss()
+        }
     }
     
     open func show(attachToView view: UIView) {
         self.show(self, inView: view)
     }
     
-    //Show View
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view!.isDescendant(of: self.pickerSuperView){
+            return false
+        }
+        return true
+    }
+    
     fileprivate func show(_ contentView: UIView, inView: UIView) {
         
-        self.contentView = inView
-        
-        self.containerView = UIView()
-        self.containerView.frame = CGRect(x: 0, y: 0, width: inView.bounds.width, height: inView.bounds.height)
+        self.frame = inView.frame
         self.containerView.backgroundColor = UIColor.clear
         self.containerView.alpha = 0
         
-        self.contentView.addSubview(self.containerView)
-        
-        
-        if showBlur {
-            _showBlur()
-        }
-        
-        self.backgroundView = createBackgroundView()
-        self.containerView.addSubview(self.backgroundView)
-        
-        self.datePickerView = createDatePicker()
-        self.backgroundView.addSubview(self.datePickerView)
-        
-        //Round .Left / .Right Corners of DatePicker View
-        if showCornerRadius {
-            let path = UIBezierPath(roundedRect:self.datePickerView.bounds, byRoundingCorners:[.topRight, .topLeft], cornerRadii: CGSize(width: 10, height: 10))
-            let maskLayer = CAShapeLayer()
-            
-            maskLayer.path = path.cgPath
-            self.datePickerView.layer.mask = maskLayer
-        }
-        
-        self.backgroundView.addSubview(self.addSelectButton())
-        
-        
+        inView.addSubview(self)
+        self.containerView.frame.origin.y = inView.bounds.height
         //Show UI Views
         UIView.animate(withDuration: 0.15, animations: {
             self.containerView.alpha = 1
         }, completion: { (success:Bool) in
             UIView.animate(withDuration: 0.30, delay: 0, options: .transitionCrossDissolve, animations: {
                 //self.backgroundView.frame.origin.y = self.containerView.bounds.height / 2 - 125
-                self.backgroundView.frame.origin.y = self.containerView.bounds.height - 160
-                }, completion: { (success:Bool) in
-                    
+                self.containerView.frame.origin.y = 0
+            }, completion: { (success:Bool) in
             })
-        }) 
-        
+        })
         if tapToDismiss {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(PickerView.dismiss(_:)))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismiss(_:)))
             tap.delegate = self
             self.containerView.addGestureRecognizer(tap)
         }
-        
         self.layoutSubviews()
     }
-    
-    
     //Handle Tap Dismiss
     @objc func dismiss(_ sender: UITapGestureRecognizer? = nil) {
-        
         UIView.animate(withDuration: 0.15, animations: {
-            self.backgroundView.frame.origin.y += self.containerView.bounds.maxY
+            self.pickerSuperView.frame.origin.y += self.containerView.bounds.maxY
         }, completion: { (success:Bool) in
-            
             UIView.animate(withDuration: 0.05, delay: 0, options: .transitionCrossDissolve, animations: {
                 self.containerView.alpha = 0
-                }, completion: { (success:Bool) in
-                    self.containerView.removeGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(PickerView.dismiss(_:))))
-                    self.containerView.removeFromSuperview()
-                    self.removeFromSuperview()
+            }, completion: { (success:Bool) in
+                self.containerView.removeGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(self.dismiss(_:))))
+                self.containerView.removeFromSuperview()
+                self.removeFromSuperview()
             })
-            
-        }) 
-        
-        
+        })
     }
-    
-    //Show Blur Effect
-    fileprivate func _showBlur() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = self.contentView.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
-        //self.containerView.addSubview(blurEffectView)
-    }
-    
-    //Create DatePicker
-    fileprivate func createDatePicker() -> UIDatePicker {
-        let datePickerView: UIDatePicker = UIDatePicker(frame: CGRect(x: 0, y: -60, width: self.backgroundView.bounds.width, height: self.backgroundView.bounds.height))
-        datePickerView.date = self.datePickerStartDate
-        datePickerView.timeZone = NSTimeZone.system
-        datePickerView.maximumDate = Date()
-        datePickerView.autoresizingMask = [.flexibleWidth]
-        datePickerView.clipsToBounds = true
-        datePickerView.backgroundColor = UIColor.white
-        datePickerView.datePickerMode = self.datePickerType.dateType()
-        return datePickerView
-    }
-    //
-    //Create Background Container View
-    fileprivate func createBackgroundView() -> UIView {
-        //x = self.containerView.frame.width / 2 - 150
-        let bgView = UIView(frame: CGRect(x: 0, y: self.containerView.bounds.maxY + 100, width: ez.screenWidth, height: 160))
-        bgView.autoresizingMask = [.flexibleWidth]
-        bgView.backgroundColor = UIColor.clear
-        bgView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 3.0, opacity: 0.5 ,cornerRadius : 0)
-        return bgView
-    }
-    
-    fileprivate func addSelectButton() -> UIButton {
-        
-        let btn = UIButton(type: .system)
-        //x = self.backgroundView.frame.width / 2 - 150
-        btn.frame = CGRect(x: 0, y: self.datePickerView.frame.maxY, width: self.backgroundView.frame.size.width, height: 48)
-        btn.setTitle("Select", for: UIControlState())
-        btn.titleLabel?.font = UIFont.appFont(.Medium)
-        btn.tintColor = self.btnFontColour
-        btn.backgroundColor = self.btnColour
-        btn.addTarget(self, action: #selector(PickerView.didSelectDate(_:)), for: .touchUpInside)
-        
-        //Round .Left / .Right Corners of DatePicker View
-        if showCornerRadius {
-            let path = UIBezierPath(roundedRect: btn.bounds, byRoundingCorners:[.bottomRight, .bottomLeft], cornerRadii: CGSize(width: 10, height: 10))
-            let maskLayer = CAShapeLayer()
-            
-            maskLayer.path = path.cgPath
-            btn.layer.mask = maskLayer
-        }
-        return btn
-    }
-    
-    @objc fileprivate func didSelectDate(_ sender: UIButton) {
-        if delegate != nil {
-            self.delegate?.scPopDatePickerDidSelectDate(self.datePickerView.date)
-            self.dismiss()
-        }
-    }
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
 }
-
+extension PickerView{
+    func datePickerValueChanged(_ sender: UIDatePicker){
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE dd'th' MMMM,  hh:mm a"
+        let selectedDate: String = dateFormatter.string(from: sender.date)
+        print("Selected value \(selectedDate)")
+        ez.runThisInMainThread {
+            self.headerdateLbl.attributedText = TheGlobalPoolManager.attributedTextWithTwoDifferentTextsWithFont(self.nameLbl + "\n", attr2Text: selectedDate, attr1Color: .whiteColor, attr2Color: .whiteColor, attr1Font: UIDevice.isPhone() ? 16 : 18, attr2Font: UIDevice.isPhone() ? 14 : 16, attr1FontName: AppFonts.Medium, attr2FontName: AppFonts.Regular)
+        }
+    }
+}

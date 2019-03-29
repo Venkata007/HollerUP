@@ -25,6 +25,7 @@ extension PopOverViewController {
             
             cell.textLabel?.text = title
             cell.textLabel?.font = titleTextLabelFont
+            cell.textLabel?.textAlignment = .center
             cell.textLabel?.sizeToFit()
             
             if let descriptions = self.descriptions {

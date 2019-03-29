@@ -9,7 +9,7 @@
 import UIKit
 import EZSwiftExtensions
 
-class PaymentsViewController: UIViewController,SCPopDatePickerDelegate{
+class PaymentsViewController: UIViewController,PickerViewDelegate{
 
     @IBOutlet weak var headerTitleLbl: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
@@ -31,7 +31,7 @@ class PaymentsViewController: UIViewController,SCPopDatePickerDelegate{
     @IBOutlet weak var transferBtn: UIButton!
     
     
-    let datePicker = PickerView()
+    var datePicker:PickerView!
     var selectedBtn : String!
     let date = Date()
     var startTime : String!
@@ -103,7 +103,6 @@ class PaymentsViewController: UIViewController,SCPopDatePickerDelegate{
                 button.setImage(#imageLiteral(resourceName: "Radio_Off"), for: .normal)
             }
         }
-        
     }
     @IBAction func transferBtn(_ sender: UIButton) {
     }
@@ -135,8 +134,10 @@ extension PaymentsViewController{
         self.datePickerView()
     }
     func datePickerView(){
+        self.datePicker = nil
+        self.datePicker = PickerView(frame: self.view.frame)
         self.datePicker.tapToDismiss = true
-        self.datePicker.datePickerType = SCDatePickerType.date
+        self.datePicker.datePickerMode = .date
         self.datePicker.showBlur = true
         self.datePicker.datePickerStartDate = self.date
         self.datePicker.btnFontColour = UIColor.white
@@ -146,7 +147,7 @@ extension PaymentsViewController{
         self.datePicker.show(attachToView: self.view)
     }
     //MARK : - Gertting Age  based on DOB
-    func scPopDatePickerDidSelectDate(_ date: Date) {
+    func pickerViewDidSelectDate(_ date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/YY"
         dateFormatter.timeZone = NSTimeZone.init(abbreviation: "UTC")! as TimeZone

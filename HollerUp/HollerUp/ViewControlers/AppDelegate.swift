@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate{
     func pushingToRootViewController(){
         if let tabBarController = window?.rootViewController as? TabBarController {
+            tabBarController.selectedIndex = 2
             DispatchQueue.main.async {
                 if let unselectedImage = UIImage(named: "HollerUp-Icon-Deactive"), let selectedImage = UIImage(named: "HollerUp-Icon-Active") {
                     tabBarController.addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage)

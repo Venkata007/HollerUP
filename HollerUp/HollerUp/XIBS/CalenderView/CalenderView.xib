@@ -42,21 +42,21 @@
                             <rect key="frame" x="8" y="0.0" width="120" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0K-kG-AdP">
-                                    <rect key="frame" x="0.0" y="0.0" width="35.5" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="20" height="50"/>
                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
-                                    <state key="normal" image="leftArrow"/>
+                                    <state key="normal" image="Backward"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nl-zU-H7o">
-                                    <rect key="frame" x="40.5" y="0.0" width="38.5" height="50"/>
+                                    <rect key="frame" x="25" y="0.0" width="63.5" height="50"/>
                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                     <state key="normal" title="2019">
                                         <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWB-N5-PPy">
-                                    <rect key="frame" x="84" y="0.0" width="36" height="50"/>
+                                    <rect key="frame" x="93.5" y="0.0" width="26.5" height="50"/>
                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
-                                    <state key="normal" image="rightArrow"/>
+                                    <state key="normal" image="Farward"/>
                                 </button>
                             </subviews>
                             <constraints>
@@ -317,10 +317,10 @@
         </view>
     </objects>
     <resources>
+        <image name="Backward" width="12" height="21"/>
+        <image name="Farward" width="12" height="21"/>
         <image name="Plus" width="17" height="17"/>
         <image name="Serach" width="18" height="18"/>
         <image name="Synch" width="14" height="19"/>
-        <image name="leftArrow" width="35" height="35"/>
-        <image name="rightArrow" width="35" height="35"/>
     </resources>
 </document>

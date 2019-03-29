@@ -27,6 +27,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var upcomingProfileImg: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var lastSelectedIndexPath:Int = 0
+    
     var dataSource = [[QUATER_TITLE:"Q1",
                        AMOUNT:"1000",
                        DURATION:"100",
@@ -52,6 +54,8 @@ class HomeViewController: UIViewController {
         self.collectionView.dataSource = self
         collectionView.allowsMultipleSelection = false
         collectionView.allowsSelection = true
+        let indexPath = self.collectionView.indexPathsForSelectedItems?.last ?? IndexPath(item: 0, section: 0)
+        self.collectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
         self.updateUI()
     }
     //MARK:- Update UI
@@ -80,15 +84,18 @@ extension HomeViewController : UICollectionViewDataSource,UICollectionViewDelega
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellIdentifiers.UpcomingCallsCell, for: indexPath as IndexPath) as! UpcomingCallsCell
+        cell.isSelected = (lastSelectedIndexPath == indexPath.row)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! UpcomingCallsCell
-        if cell.isSelected{
-            cell.cellSelected(true)
-        }else{
-            cell.cellSelected(false)
+        guard lastSelectedIndexPath != indexPath.row else {
+            return
         }
+        collectionView.deselectItem(at: IndexPath.init(row: lastSelectedIndexPath, section: 0), animated: false)
+        print("Selected:\(indexPath.row)")
+        cell.isSelected = true
+        lastSelectedIndexPath = indexPath.row
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 70, height: 70);

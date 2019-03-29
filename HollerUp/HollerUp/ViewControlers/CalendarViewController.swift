@@ -134,14 +134,14 @@ extension CalendarViewController{
     }
     @objc func addEventCalendar(notification: Notification){
         if let viewCon = self.storyboard?.instantiateViewController(withIdentifier: ViewControllerIDs.AddCalendarEvent) as? AddCalendarEvent{
-            viewCon.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(viewCon, animated: true)
+            //viewCon.hidesBottomBarWhenPushed = true
+            self.present(viewCon, animated: true, completion: nil)
         }
     }
     @objc func synchCalendar(notification: Notification){
         if let viewCon = self.storyboard?.instantiateViewController(withIdentifier: ViewControllerIDs.SynchCalendarVC) as? SynchCalendarVC{
-            viewCon.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(viewCon, animated: true)
+            //viewCon.hidesBottomBarWhenPushed = true
+            self.present(viewCon, animated: true, completion: nil)
         }
     }
 }

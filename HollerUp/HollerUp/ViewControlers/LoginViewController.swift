@@ -21,6 +21,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.emailTF.text = "vamsi@gmail.com"
+        self.passwordTF.text = "123456"
         self.updateUI()
     }
     //MARK:- Update UI
@@ -40,11 +42,23 @@ class LoginViewController: UIViewController {
     }
     @IBAction func signInBtn(_ sender: Any) {
         if validate(){
-            
+            self.pushingToDashBoardVC()
         }
     }
 }
 extension LoginViewController{
+    //MARK: - Pushing the DashBoard View Controller
+    func pushingToDashBoardVC(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: ViewControllerIDs.TabBarController) as! TabBarController
+        controller.selectedIndex = 2
+        DispatchQueue.main.async {
+           if let unselectedImage = UIImage(named: "HollerUp-Icon-Deactive"), let selectedImage = UIImage(named: "HollerUp-Icon-Active") {
+                controller.addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage)
+            }
+        }
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     //MARK:- Validation
     func validate() -> Bool{
         if (self.emailTF.text?.isEmpty)!{

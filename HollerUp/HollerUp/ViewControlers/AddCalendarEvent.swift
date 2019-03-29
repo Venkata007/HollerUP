@@ -11,7 +11,7 @@ import EZSwiftExtensions
 import PopOverMenu
 
 
-class AddCalendarEvent: UIViewController,UIAdaptivePresentationControllerDelegate {
+class AddCalendarEvent: UIViewController,UIAdaptivePresentationControllerDelegate,PickerViewDelegate {
 
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var emailHeaderLbl: UILabel!
@@ -29,6 +29,11 @@ class AddCalendarEvent: UIViewController,UIAdaptivePresentationControllerDelegat
     
     let popOverViewController = PopOverViewController.instantiate()
     var titles:[String] = ["Busy","Invisible","None"]
+    var datePicker:PickerView!
+    var selectedBtn : String!
+    let date = Date()
+    var startTime : String!
+    var endTime : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +49,7 @@ class AddCalendarEvent: UIViewController,UIAdaptivePresentationControllerDelegat
     }
     //MARK:- IB Action Outlets
     @IBAction func backBtn(_ sender: UIButton) {
-        ez.topMostVC?.popVC()
+        ez.topMostVC?.dismissVC(completion: nil)
     }
     @IBAction func dropDownBtn(_ sender: UIButton) {
         //POP MENU
@@ -76,7 +81,51 @@ extension AddCalendarEvent{
 }
 extension AddCalendarEvent{
     @IBAction func fromDatePickerBtn(_ sender: UIButton) {
+        self.view.endEditing(true)
+        selectedBtn = "Start"
+        self.datePickerView("From")
     }
     @IBAction func toDatePickerBtn(_ sender: UIButton) {
+        self.view.endEditing(true)
+        selectedBtn = "End"
+        self.datePickerView("To")
+    }
+    func datePickerView(_ btnName : String){
+        self.datePicker = nil
+        self.datePicker = PickerView(frame: self.view.frame)
+        self.datePicker.tapToDismiss = true
+        self.datePicker.datePickerMode = .dateAndTime
+        self.datePicker.showBlur = true
+        self.datePicker.datePickerStartDate = self.date
+        self.datePicker.btnFontColour = UIColor.white
+        self.datePicker.btnColour = .themeColor
+        self.datePicker.showCornerRadius = false
+        self.datePicker.delegate = self
+        self.datePicker.nameLbl = btnName
+        self.datePicker.show(attachToView: self.view)
+    }
+    //MARK : - Gertting Age  based on DOB
+    func pickerViewDidSelectDate(_ date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd'th' MMMM yyyy"
+        dateFormatter.timeZone = NSTimeZone.local
+        let strDate = dateFormatter.string(from: (date))
+        print(strDate)
+        
+        let dateFormat1 = DateFormatter()
+        dateFormat1.dateFormat = "HH:mm"
+        dateFormat1.timeZone = NSTimeZone.local
+        let stringTime = dateFormat1.string(from: date)
+        
+        if selectedBtn == "Start"{
+            self.fromDateTF.text = strDate
+            self.fromTimeTF.text = stringTime
+            startTime = strDate
+        }
+        else{
+            self.toDateTF.text = strDate
+            self.toTimeTF.text = stringTime
+            endTime = strDate
+        }
     }
 }

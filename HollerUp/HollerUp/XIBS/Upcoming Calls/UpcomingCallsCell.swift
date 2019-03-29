@@ -20,20 +20,22 @@ class UpcomingCallsCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         ez.runThisInMainThread {
-            self.viewInView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 3.0, opacity: 0.35 ,cornerRadius : 8)
+            self.viewInView.addShadow(offset: CGSize.init(width: 0, height: 2), color: UIColor.black, radius: 2.0, opacity: 0.35 ,cornerRadius : 8)
             self.weekDay.roundCorners(corners: [.topLeft,.topRight], radius: 8.0)
             self.durationLbl.roundCorners(corners: [.bottomLeft,.bottomRight], radius: 8.0)
         }
     }
-    func cellSelected(_ isSelectedValue:Bool){
-        if isSelectedValue{
-            self.time.backgroundColor = .secondaryColor
-            self.durationLbl.backgroundColor = .secondaryColor
-            self.time.textColor = .textColor
-        }else{
-            self.time.backgroundColor = .whiteColor
-            self.durationLbl.backgroundColor = .whiteColor
-            self.time.textColor = .themeColor
+    override var isSelected: Bool{
+        didSet(newValue){
+            if newValue{
+                self.time.backgroundColor = .secondaryColor
+                self.durationLbl.backgroundColor = .secondaryColor
+                self.time.textColor = .textColor
+            }else{
+                self.time.backgroundColor = .whiteColor
+                self.durationLbl.backgroundColor = .whiteColor
+                self.time.textColor = .themeColor
+            }
         }
     }
 }

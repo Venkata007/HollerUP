@@ -33,7 +33,7 @@ class SynchCalendarVC: UIViewController {
     }
     //MARK:- IB Action Outlets
     @IBAction func backBtn(_ sender: UIButton) {
-        ez.topMostVC?.popVC()
+        ez.topMostVC?.dismissVC(completion: nil)
     }
     @IBAction func doneBtn(_ sender: UIButton) {
     }
