@@ -79,7 +79,7 @@ extension AddCalendarEvent{
         return UIModalPresentationStyle.none
     }
 }
-extension AddCalendarEvent{
+extension AddCalendarEvent {
     @IBAction func fromDatePickerBtn(_ sender: UIButton) {
         self.view.endEditing(true)
         selectedBtn = "Start"

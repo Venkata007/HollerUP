@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController {
     //MARK:- IB Action Outlets
     @IBAction func editBtn(_ sender: UIButton) {
         if let viewCon = self.storyboard?.instantiateViewController(withIdentifier: ViewControllerIDs.EditProfileViewController) as? EditProfileViewController{
-            //viewCon.hidesBottomBarWhenPushed = true
+            viewCon.hidesBottomBarWhenPushed = true
             self.present(viewCon, animated: true, completion: nil)
         }
     }

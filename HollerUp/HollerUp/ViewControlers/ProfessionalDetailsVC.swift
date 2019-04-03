@@ -65,6 +65,7 @@ extension ProfessionalDetailsVC: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 4{
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.AddNewCell) as! AddNewCell
+            cell.addNewBtn.addTarget(self, action: #selector(addNewDocumentMethod(_:)), for: .touchUpInside)
             return cell
         }else if indexPath.row == 5{
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.SaveButtonCell) as! SaveButtonCell
@@ -88,5 +89,74 @@ extension ProfessionalDetailsVC: UITableViewDataSource,UITableViewDelegate {
     }
 }
 extension ProfessionalDetailsVC{
-    
+    @objc func addNewDocumentMethod(_ btn : UIButton){
+        self.imagePicking("Upload Document")
+    }
+    //MARK: - Image Picking
+    func imagePicking(_ title:String){
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            print("IPAD")
+        }
+        else if UIDevice.current.userInterfaceIdiom == .phone{
+            let actionSheetController = UIAlertController(title: title, message: "", preferredStyle: .actionSheet)
+            
+            let cameraActionButton = UIAlertAction(title: "Take a picture", style: .default) { action -> Void in
+                self.imagePicker(clickedButtonat: 0)
+            }
+            let photoAlbumActionButton = UIAlertAction(title: "Camera roll", style: .default) { action -> Void in
+                self.imagePicker(clickedButtonat: 1)
+            }
+            let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+            }
+            actionSheetController.addAction(cameraActionButton)
+            actionSheetController.addAction(photoAlbumActionButton)
+            actionSheetController.addAction(cancelActionButton)
+            self.present(actionSheetController, animated: true, completion: nil)
+        }
+    }
+    // MARK: - Image picker from gallery and camera
+    private func imagePicker(clickedButtonat buttonIndex: Int) {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        switch buttonIndex {
+        case 0:
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                picker.sourceType = .camera
+                present(picker, animated: true, completion: nil)
+            }
+            else{
+                TheGlobalPoolManager.showToastView("Camera Is not Available")
+            }
+        case 1:
+            picker.sourceType = .photoLibrary
+            present(picker, animated: true, completion:nil)
+        default:
+            break
+        }
+    }
+    // MARK: - UIImagePickerController delegate methods
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            selectedImage = image
+        }
+        else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            selectedImage = image
+        } else{
+            print("Something went wrong")
+        }
+        convertImage(image: selectedImage)
+        print(selectedImage)
+        self.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func convertImage(image: UIImage) {
+        let imageData = UIImageJPEGRepresentation(image, 0.1)! as NSData
+        let dataString = imageData.base64EncodedString()
+        selectedImageBase64String = dataString
+        print(" *************** Base 64 String =========\(selectedImageBase64String)")
+    }
 }
+

@@ -1,6 +1,7 @@
 
 
 import UIKit
+import EZSwiftExtensions
 
 open
 class TabBarController: UITabBarController {
