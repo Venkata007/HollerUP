@@ -126,14 +126,14 @@ extension PaymentsViewController{
     @IBAction func fromDatePickerBtn(_ sender: UIButton) {
         self.view.endEditing(true)
         selectedBtn = "Start"
-        self.datePickerView()
+        self.datePickerView("From")
     }
     @IBAction func toDatePickerBtn(_ sender: UIButton) {
         self.view.endEditing(true)
         selectedBtn = "End"
-        self.datePickerView()
+        self.datePickerView("To")
     }
-    func datePickerView(){
+    func datePickerView( _ btnName : String){
         self.datePicker = nil
         self.datePicker = PickerView(frame: self.view.frame)
         self.datePicker.tapToDismiss = true
@@ -144,6 +144,7 @@ extension PaymentsViewController{
         self.datePicker.btnColour = .themeColor
         self.datePicker.showCornerRadius = false
         self.datePicker.delegate = self
+        self.datePicker.nameLbl = btnName
         self.datePicker.show(attachToView: self.view)
     }
     //MARK : - Gertting Age  based on DOB

@@ -104,19 +104,20 @@ class PersonalDetailsVC: UIViewController,PickerViewDelegate,UIAdaptivePresentat
 extension PersonalDetailsVC{
     @IBAction func dateOfBirthBtn(_ sender: ButtonIconRight) {
         self.view.endEditing(true)
-        self.datePickerView()
+        self.datePickerView("Date Of Birth")
     }
-    func datePickerView(){
+    func datePickerView(_ btnName : String){
         self.datePicker = nil
-        self.datePicker = PickerView(frame: self.view.frame)
+        self.datePicker = PickerView(frame: (ez.topMostVC?.view.frame)!)
         self.datePicker.tapToDismiss = true
-        self.datePicker.datePickerMode = .time
+        self.datePicker.datePickerMode = .date
         self.datePicker.showBlur = true
         self.datePicker.datePickerStartDate = self.date
         self.datePicker.btnFontColour = UIColor.white
         self.datePicker.btnColour = .themeColor
         self.datePicker.showCornerRadius = false
         self.datePicker.delegate = self
+        self.datePicker.nameLbl = btnName
         self.datePicker.show(attachToView: self.view)
     }
     //MARK : - Gertting Age  based on DOB

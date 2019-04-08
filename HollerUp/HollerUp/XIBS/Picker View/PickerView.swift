@@ -80,7 +80,7 @@ class PickerView: UIView, UIGestureRecognizerDelegate {
         }
     }
     
-    func updateProperties(){
+    func updateProperties(){        
         self.selectedBtn.setTitle(btnTitle, for: .normal)
         self.selectedBtn.titleLabel?.font = btnFont
         self.selectedBtn.tintColor = self.btnFontColour
