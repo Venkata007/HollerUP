@@ -97,7 +97,7 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are You Sure ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXO-HY-RJL">
-                    <rect key="frame" x="109" y="93" width="102.5" height="28"/>
+                    <rect key="frame" x="107" y="93" width="106" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="E3q-ka-W1y"/>
                     </constraints>
@@ -109,7 +109,7 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to reject this appointmnet?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS0-3X-jfl">
-                    <rect key="frame" x="21" y="126" width="278.5" height="28"/>
+                    <rect key="frame" x="19.5" y="126" width="281.5" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="W11-Mo-yu3"/>
                     </constraints>

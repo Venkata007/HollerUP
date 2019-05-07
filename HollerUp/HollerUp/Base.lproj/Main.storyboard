@@ -4365,11 +4365,11 @@
         <scene sceneID="aiC-3p-e2V">
             <objects>
                 <viewController storyboardIdentifier="PaymentsDetailsVC" id="NGP-NB-PCY" customClass="PaymentsDetailsVC" customModule="HollerUp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nYI-e3-9wq">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="nYI-e3-9wq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QpC-Ht-8se">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QpC-Ht-8se">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaL-Fh-2sR">
@@ -4735,7 +4735,7 @@
         <image name="Appointment-Active" width="24" height="26.5"/>
         <image name="Appointment-Deactive" width="24" height="26.5"/>
         <image name="Back" width="12" height="20.5"/>
-        <image name="Calendar" width="14" height="14"/>
+        <image name="Calendar" width="30" height="30"/>
         <image name="Calendar-Active" width="22.5" height="25"/>
         <image name="Calendar-Deactive" width="22.5" height="25"/>
         <image name="Close" width="13.5" height="13.5"/>

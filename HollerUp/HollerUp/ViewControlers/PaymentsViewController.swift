@@ -151,7 +151,7 @@ extension PaymentsViewController{
     func pickerViewDidSelectDate(_ date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/YY"
-        dateFormatter.timeZone = NSTimeZone.init(abbreviation: "UTC")! as TimeZone
+        dateFormatter.timeZone = NSTimeZone.local
         let strDate = dateFormatter.string(from: (date))
         print(strDate)
         if selectedBtn == "Start"{
